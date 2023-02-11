@@ -1,0 +1,62 @@
+<section class="section_bid @@class">
+	<div class="container">
+		
+		<div class="bid__cont">
+			
+			<div class="bid__data">
+				<div class="title title-md title-appear">@@title</div>
+				<div class="bid__contact">
+					@@if(phone === true) { <a href="tel:+78127153900" class="link link-under bid__phone">+7 812 715-39-00</a> }
+					@@if(email === true) { <a href="mailto:info@kofes.ru" class="link link-under bid__email">info@kofes.ru</a> }
+				</div>
+
+			</div>
+			<div class="bid__form">
+				
+				<form action="#" class="form">
+					<div class="form__row row">
+						
+						<div class="form__outer col-12">
+							<div class="form__inp">
+								<input type="text" name="name" class="form__input" value="" />
+								<div class="form__label">Ваше имя</div>
+							</div>
+						</div>
+						
+						<div class="form__outer col-12 col-md-6">
+							<div class="form__inp">
+								<input type="tel" name="phone" class="form__input" value="" />
+								<div class="form__label">Телефон</div>
+							</div>
+						</div>
+						
+						<div class="form__outer col-12 col-md-6">
+							<div class="form__inp">
+								<input type="tel" name="email" class="form__input" value="" />
+								<div class="form__label">Email</div>
+							</div>
+						</div>
+						
+						<div class="form__outer col-12">
+							<div class="form__inp">
+								<textarea name="message" class="form__textarea"></textarea>
+								<div class="form__label">@@textarea</div>
+							</div>
+						</div>
+
+						<div class="form__outer form__subm col-12">
+							<button type="submit" class="form__submit btn btn-black"><span class="btn-text" data-text="Отправить">Отправить</span></button>
+							<div class="form__agree">
+								Согласен (а) с <a href="#">политикой обработки персональных данных</a> и <a href="#">офертой</a>
+							</div>
+						</div>
+
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+</section>

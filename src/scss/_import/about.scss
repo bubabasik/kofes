@@ -1,0 +1,164 @@
+.section_about{
+	padding-top: v(56);
+	padding-bottom: v(7);
+	@include media($w-xl) {
+		padding-top: v(116);
+		padding-bottom: v(80);
+	}
+}
+.about__logo{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding-bottom: v(15);
+	position: relative;
+
+	.bt{
+		top: auto;
+		bottom: 0;
+	}
+
+	svg{
+		fill: var(--black);
+	}
+	&_main{
+		svg{
+			width: v(163);
+			height: v(55);
+		}
+	}
+	&_sup{
+		svg{
+			width: v(86);
+			height: v(15);
+		}
+	}
+
+
+	@include media($w-md) {
+		padding-bottom: v(30);
+		&_main{
+			svg{
+				width: v(300);
+				height: v(102);
+			}
+		}
+		&_sup{
+			margin-top: v(5);
+			svg{
+				width: v(117);
+				height: v(20);
+			}
+		}
+	}
+	@include media($w-lg) {
+		padding-bottom: v(50);
+		&_main{
+			svg{
+				width: v(520);
+				height: v(177);
+			}
+		}
+		&_sup{
+			margin-top: v(5);
+			svg{
+				width: v(155);
+				height: v(26);
+			}
+		}
+	}
+	@include media($w-xl) {
+		padding-bottom: v(77);
+		&_main{
+			svg{
+				width: v(880);
+				height: v(298);
+			}
+		}
+		&_sup{
+			margin-top: 1px;
+			svg{
+				width: v(278);
+				height: v(48);
+			}
+		}
+	}
+}
+
+.about__info{
+	margin-top: v(40);
+	@include media($w-md) {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-top: v(60);
+	}
+	@include media($w-lg) {
+		margin-top: v(81);
+	}
+}
+.about__img{
+	padding-right: v(33);
+
+	@include media($w-md) {
+		max-width: 40%;
+		padding-right: v(20);
+		padding-bottom: v(21);
+	}
+	@include media($w-xl) {
+		padding-right: v(40);
+	}
+}
+.about__data{
+	margin-top: v(30);
+
+	.text{
+		margin-top: v(30);
+			letter-spacing: -0.03em;
+	}
+
+	@include media-max($w-md) {
+		.title{
+			font-size: v(32);
+		}
+	}
+	@include media($w-md) {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-left: v(8);
+		margin-top: 0;
+	}
+	@include media($w-lg) {
+		.text{
+			--text-fz: 20;
+			letter-spacing: 0;
+			margin-top: v(40);
+			max-width: v(428);
+		}
+	}
+}
+.about__cifres{
+	margin-top: v(100);
+	.utp__cifres{
+		margin-top: 0;
+	}
+
+	@include media($w-xl) {
+		margin-top: v(125);
+		.utp__cifres{
+			&_row{
+				padding: 0 v(210) 0 0;
+			}
+		}
+	}
+}
+.about__utplogo{
+	margin-top: v(9);
+	.utp__logo{
+		margin-top: 0;
+	}
+
+	@include media($w-xl) {
+		margin-top: v(69);
+	}
+}

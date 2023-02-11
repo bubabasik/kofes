@@ -1,0 +1,254 @@
+
+.fancybox-bg{
+	background: #000!important;
+	opacity: 0!important;
+	transition: 1.2s var(--ease-out)!important;
+}
+.fancybox-is-open {
+	.fancybox-bg{
+		opacity: .2!important;
+	}
+}
+.fancy-from-right,
+.fancy-from-bottom{
+	.fancybox-slide{
+		padding: 0 !important;
+		overflow-x: hidden;
+	}
+}
+.fancy-from-bottom{
+	.fancybox-slide{
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+	}
+}
+.fancy-mmenu{
+	.fancybox-bg{
+		visibility: hidden !important;
+	}
+}
+
+.fancybox-slide--html{
+	padding: 0 !important;
+}
+
+.alert__cont{
+	--margin: 16;
+	padding: v(44) v(16) v(24);
+	float: right;
+	margin: calc(var(--margin) * var(--fz))!important;
+	transition: .6s var(--ease-out);
+	transform: translateX(calc(100% + calc(var(--margin) * var(--fz)) ));
+	opacity: 1!important;
+	overflow: hidden;
+	
+	&.active{
+		transform: none;
+	}
+
+	&-success{
+		padding-bottom: v(14);
+		.btn{
+			min-width: v(145);
+		}
+	}
+
+	@include media($w-md) {
+		--margin: 40;
+		max-width: v(550);
+		padding: v(50) v(40) v(40);
+	}
+	@include media($w-lg) {
+		max-width: v(650);
+		padding: v(120) v(60) v(60);
+	}
+	@include media($w-xl) {
+		--margin: 60;
+		padding: v(120) v(106) v(60) v(80);
+		max-width: v(789);
+
+		&-success{
+			.alert__text{
+				max-width: v(450);
+			}
+		}
+	}
+}
+.alert__title{
+	padding-right: v(18);
+
+	@include media($w-md) {
+		padding-right: 0;
+	}
+}
+.alert__text{
+	margin-top: v(16);
+
+	@include media($w-lg) {
+		margin-top: v(20);
+		font-size: v(18);
+	}
+	@include media($w-xl) {
+		font-size: v(20);
+		max-width: v(529);
+	}
+}
+.alert__buttons{
+	margin: v(20) v(-5) 0;
+	display: flex;
+	flex-wrap: wrap;
+	.btn{
+		--btn-padding: 18;
+		margin: 0 v(5) v(6);
+		font-size: v(14);
+	}
+
+	@include media($w-md) {
+		.btn{
+			font-size: v(16);
+		}
+	}
+	@include media($w-lg) {
+		margin-left: v(-10);
+		margin-right: v(-10);
+		margin-top: v(40);
+		.btn{
+			margin-left: v(10);
+			margin-right: v(10);
+			--btn-padding: 28;
+			font-size: v(18);
+		}
+	}
+	@include media($w-xl) {
+		.btn{
+			font-size: v(20);
+		}
+	}
+}
+
+.modal__cont{
+	--color-main: var(--black-2);
+	color: var(--color-main);
+	float: right;
+	min-height: 100vh;
+	transform: translateX(100%);
+	transition: .6s var(--ease-out);
+	opacity: 1!important;
+	width: 100%;
+	padding: v(44) v(16) v(102);
+	overflow: hidden;
+	
+	&.active{
+		transform: none;
+	}
+
+	@include media($w-md) {
+		max-width: 60%;
+		padding: v(60) v(45) v(100);
+	}
+	@include media($w-lg) {
+		padding: v(80) v(60) v(120);
+	}
+	@include media($w-xl) {
+		max-width: v(960);
+		padding: v(120) v(80) v(176);
+	}
+}
+.modal__close{
+	position: absolute;
+	width: v(34);
+	height: v(34);
+	top: v(15);
+	right: v(16);
+	z-index: 99;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: #2E3331;
+	transition: .3s var(--ease-out);
+
+	&:hover{
+		transform: rotate(-90deg)
+	}
+
+	svg{
+		fill: currentColor;
+		width: 100%;
+		height: 100%;
+	}
+
+	@include media($w-md) {
+		top: v(30);
+		right: v(30);
+	}
+	@include media($w-lg) {
+		width: v(44);
+		height: v(44);
+		top: v(60);
+		right: v(60);
+	}
+	@include media($w-xl) {
+		top: v(80);
+		right: v(80);
+	}
+}
+.modal__top{
+	border-bottom: 1px solid var(--line-gray);
+	padding-bottom: v(14);
+
+	@include media($w-xl) {
+		padding-bottom: v(36);
+	}
+}
+.modal__title{
+	padding-right: v(45);
+	margin-bottom: v(4);
+
+	sup{
+		color: var(--carrot-2);
+		font-size: 63%;
+		margin-left: 0.05em;
+		top: -0.65em;
+	}
+
+	@include media-max($w-md) {
+		padding-right: v(45);
+		line-height: 1.1;
+		font-size: v(32);
+	}
+	@include media($w-md) {
+		padding-right: 0;
+	}
+	@include media($w-lg) {
+		padding-right: v(50);
+	}
+}
+.modal__preview{
+	--text-mb: 5;
+	margin-top: v(16);
+	letter-spacing: -0.03em;
+	font-weight: 500;
+
+	@include media($w-lg) {
+		margin-top: v(20);
+	}
+}
+.modal__form{
+	margin-top: v(40);
+	.form__agree{
+		a{
+			background-size: 0;
+		}
+	}
+	@include media($w-xl) {
+		margin-top: v(60);
+		.form__submit{
+			--btn-padding: 82;
+		}
+	}
+}
+.modal__cart{
+
+}

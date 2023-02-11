@@ -1,0 +1,9 @@
+{
+	"pages" : {
+		"Обо мне" : "/about.html",
+		"Главная" : "/main.html",
+		"Блог" : "/blog.html",
+		"Для теста" : "/test.html"
+	}
+
+}

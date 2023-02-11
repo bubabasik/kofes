@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_about">
+		<div class="container">
+
+			<div class="about__logo">
+
+				<a href="/" class="about__logo_main">
+					<svg class="ico"><use xlink:href="./img/logo.svg#logo-main" /></svg>
+				</a>
+				<div class="about__logo_sup">
+					<svg class="ico"><use xlink:href="./img/logo.svg#logo-copy" /></svg>
+				</div>
+
+				<div class="bt bt-anim"></div>
+			</div>
+
+			<div class="about__info">
+				<div class="about__img img-item">
+					<img src="./images/about.png" alt="">
+				</div>
+				<div class="about__data">
+					<div class="title title-sm">
+						<h1 class="title-appear">
+							КОФЕ
+							<br>ОБОРУДОВАНИЕ
+							<br>ОБУЧЕНИЕ
+						</h1>
+					</div>
+					<div class="text text-md">
+						<p>
+							Работаем в сегменте HoReCa с 2009 года.
+							<br>Профессиональное оборудование требует того, чтобы на нем работали профессионалы.Многие клиенты сталкиваются с проблемой низкой квалификации сотрудников. Для решения этой задачи собственная школа бариста, в которой мы обучим ваш персонал работе с рожковыми кофемашинами, что поможет повысить качество кофе и улучшить продажи.
+						</p>
+						<p>Наша компания помогает организовать кофейный бизнес, проводит аудит заведений и вносит изменения, которые позволят увеличить пролив кофе. У нас есть свой сервисный центр и на время ремонта профессионального оборудования мы предоставляем замену. Ваше заведение не будет простаивать и терять прибыль.</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="about__cifres">
+			<div class="utp__cifres">
+				<div class="container">
+
+					<div class="utp__cifres_row">
+
+						<div class="utp__cifres_item order-1">
+							<div class="utp__cifres_num" data-splitting>13</div>
+							<div class="utp__cifres_text">лет в кофейном бизнесе</div>
+						</div>
+
+						<div class="utp__cifres_item utp__cifres_item-xl order-3 order-lg-1">
+							<div class="utp__cifres_num" data-splitting>3000<strong>+</strong></div>
+							<div class="utp__cifres_text">кофемашин продано и передано в аренду</div>
+						</div>
+
+						<div class="utp__cifres_item order-2">
+							<div class="utp__cifres_num" data-splitting>25</div>
+							<div class="utp__cifres_text">человек в&nbsp;команде</div>
+						</div>
+
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+		<div class="about__utplogo">
+			<div class="utp__logo">
+				<div class="marquee">
+					<div class="marquee__inner">
+						<img src="./images/work/work-1.jpg" alt="">
+						<img src="./images/work/work-2.jpg" alt="">
+						<img src="./images/work/work-3.jpg" alt="">
+						<img src="./images/work/work-4.jpg" alt="">
+						<img src="./images/work/work-5.jpg" alt="">
+						<img src="./images/work/work-6.jpg" alt="">
+						<img src="./images/work/work-7.jpg" alt="">
+						<img src="./images/work/work-8.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- TEAM -->
+	<section class="section_team">
+		<div class="container">
+			<div class="sub">команда</div>
+			<div class="team__cont">
+				
+				<div class="team__row row">
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-1.jpg",
+						"exp"		: "Директор",
+						"name"	: "Роман Беляков",
+						"text"	: "Главный в компании. Создаю рабочую атмосферу и отвечаю за сплоченность команды."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-2.jpg",
+						"exp"		: "Руководитель отдела продаж",
+						"name"	: "Артем Панов",
+						"text"	: "Представляю компанию перед клиентами. Провожу презентации нашей продукции, помогаю увеличить ваши продажи."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-3.jpg",
+						"exp"		: "Офис-менеджер",
+						"name"	: "Светлана Бурдовицина",
+						"text"	: "Отвечаю за сбор заказов и бесперебойную работу всех отделов."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-4.jpg",
+						"exp"		: "Тренер-бариста",
+						"name"	: "Наталья Вивчарь",
+						"text"	: "Управляю школой бариста, провожу обучения, мастер-классы и каппинги. Научу готовить вкусный кофе"	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-5.jpg",
+						"exp"		: "Директор",
+						"name"	: "Роман Беляков",
+						"text"	: "Главный в компании. Создаю рабочую атмосферу и отвечаю за сплоченность команды."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-6.jpg",
+						"exp"		: "Техник",
+						"name"	: "Вячеслав Быстров",
+						"text"	: "Исправляю все, что сломано. Довожу вашу кофемашину до совершенства."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-7.jpg",
+						"exp"		: "Техник",
+						"name"	: "Виктор Васильев",
+						"text"	: "Исправляю все, что сломано. Довожу вашу кофемашину до совершенства."	})
+					</div>
+					
+					<div class="team__outer col-12 col-md-6 col-lg-4 col-xl-3">
+						@@include('./_inc/_item-team.html', {
+						"image"	: "team-8.jpg",
+						"exp"		: "Курьер",
+						"name"	: "Андрей Сойту",
+						"text"	: "Отвечаю за оперативную доставку кофе, чая и оборудования."	})
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>	
+	<!-- # TEAM -->
+
+	@@include('./_inc/_sect-bid.html', {
+	"class"			: "dark",
+	"title"			: "есть вопросы? <br>Свяжитесь с нами",
+	"textarea"	: "Ваш вопрос, отзыв или пожелание",
+	"phone"			: true,
+	"email"			: true,	})
+	
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

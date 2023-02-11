@@ -1,0 +1,91 @@
+@mixin media($width) {
+	@media (min-width: $width) {
+		@content;
+	}
+}
+@mixin media-max($width) {
+	@media (max-width: $width - 1px) {
+		@content;
+	}
+}
+@mixin media-min-max($min, $max) {
+	@media (min-width: $min) and (max-width: $max - 1px) {
+		@content;
+	}
+}
+
+@mixin hmedia($height) {
+	@media (min-height: $height) {
+		@content;
+	}
+}
+@mixin hmedia-max($height) {
+	@media (max-height: $height - 1px) {
+		@content;
+	}
+}
+@mixin hmedia-min-max($min, $max) {
+	@media (min-height: $min) and (max-height: $max - 1px) {
+		@content;
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder { @content; }
+	&:-moz-placeholder           { @content; }
+	&::-moz-placeholder          { @content; }
+	&:-ms-input-placeholder      { @content; }  
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content; 
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	} 
+}
+
+@mixin border-gradient ($color) {
+	background-image: -moz-linear-gradient($color, $color);
+	background-image: -webkit-linear-gradient($color, $color);
+	background-image: linear-gradient($color, $color);
+}
+
+// @include animation(0s, .8s, animation_name, infinite, linear);
+
+@mixin animation ($delay, $duration, $animation, $iteration, $function) {
+	-webkit-animation-delay: $delay;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-name: $animation;
+	-webkit-animation-fill-mode: forwards; 
+	-webkit-animation-iteration-count: $iteration;  
+	-webkit-animation-timing-function: $function;
+
+	-moz-animation-delay: $delay;
+	-moz-animation-duration: $duration;
+	-moz-animation-name: $animation;
+	-moz-animation-fill-mode: forwards;
+	-moz-animation-iteration-count: $iteration;  
+	-moz-animation-timing-function: $function;
+
+	-o-animation-delay: $delay;
+	-o-animation-duration: $duration;
+	-o-animation-name: $animation;
+	-o-animation-fill-mode: forwards; 
+	-o-animation-iteration-count: $iteration;  
+	-o-animation-timing-function: $function;
+
+	animation-delay: $delay;
+	animation-duration: $duration;
+	animation-name: $animation;
+	animation-fill-mode: forwards; 
+	animation-iteration-count: $iteration; 
+	animation-timing-function: $function;
+}

@@ -1,0 +1,150 @@
+.section_category{
+	margin-top: v(119);
+	padding-bottom: v(120);
+	// overflow-x: hidden;
+	// overflow: overlay;
+	position: relative;
+	z-index: 10;
+
+	@include media($w-xl) {
+		margin-top: v(120);
+		padding-bottom: v(250);
+	}
+}
+
+
+
+.cat__cont{
+	// border-top: 1px solid var(--line-gray);
+	display: flex;
+	flex-flow: column;
+	padding-top: v(17);
+	position: relative;
+
+	& + &{
+		margin-top: v(80);
+		&.pagination{
+			margin-top: v(40);
+		}
+	}
+	&.pagination + &{
+		margin-top: v(24);
+	}
+
+	@include media($w-lg) {
+		padding-top: v(40);
+		flex-flow: row;
+	}
+	@include media($w-xl) {
+		&.pagination{
+			padding-top: v(47);
+		}
+		& + .cat__cont{
+			margin-top: v(120);
+		}
+	}
+}
+.cat__aside{
+	margin-bottom: v(32);
+
+	@include media($w-lg) {
+		flex: 0 0 var(--l-column);
+		max-width: var(--l-column);
+		margin-bottom: 0;
+	}
+	@include media($w-xl) {
+		padding-right: v(38);
+	}
+}	
+.cat__content{
+
+	@include media($w-lg) {
+		flex: 0 0 calc(100% - var(--l-column));
+		max-width: calc(100% - var(--l-column));
+	}
+}
+.cat__name{
+	font-size: v(32);
+	line-height: 1.1;
+	text-transform: uppercase;
+	letter-spacing: -0.03em;
+
+	& + .filter{
+		margin-top: v(15);
+	}
+
+	@include media($w-lg) {
+		font-size: v(36);
+		& + .filter{
+			margin-top: v(60);
+		}
+	}
+	@include media($w-xl) {
+		font-size: v(42);
+		& + .filter{
+			margin-top: v(80);
+		}
+	}
+}
+.cat__list{
+	margin: 0 v(-8) v(-80);
+	display: flex;
+	flex-wrap: wrap;
+
+	@include media($w-xl) {
+		margin-bottom: v(-120);
+	}
+}
+
+.cat__outer{
+	padding: 0 v(8);
+	display: flex;
+	margin-bottom: v(80);
+	flex: 0 0 100%;
+	max-width: 100%;
+
+	@include media($w-md) {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	@include media($w-xl) {
+		flex: 0 0 33.3333%;
+		max-width: 33.3333%;
+		margin-bottom: v(120);
+	}
+}
+.cat__sub{
+	&_list{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 v(-5) v(-10);
+		.btn{
+			margin: 0 v(5) v(10);
+		}
+	}
+}
+
+.section_catdescr{
+	padding-bottom: v(120);
+	@include media($w-xl) {
+		padding-bottom: v(250);
+	}
+}
+.catdescr__text{
+	--text-mb: 10;
+	// border-top: 1px solid var(--line-gray);
+	letter-spacing: -0.03em;
+	padding-top: v(17);
+	position: relative;
+
+	@include media($w-md) {
+		padding-top: v(40);
+	}
+	@include media($w-lg) {
+		padding-left: var(--l-column);
+	}
+	@include media($w-xl) {
+		--text-head-before: 60;
+		padding-right: calc(100% - var(--l-column) - #{v(1102)});
+	}
+}

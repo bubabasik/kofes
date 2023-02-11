@@ -1,0 +1,111 @@
+.link-outer{
+	text-decoration: none!important;
+	&:hover,
+	&:active{
+		.link{
+			&-under{
+				background-size: 100% var(--link-height);
+				background-position: 0% 100%;
+			}
+			&-wide{
+				background-size: 0% var(--link-height);
+				background-position: 0% 100%;
+			}
+		}
+		.link-text{
+
+		}
+	}
+}
+
+.link{
+	// --link-color-active: var(--link-color);
+	text-decoration: none !important;
+	color: var(--link-color);
+
+	&:focus{
+		color: var(--link-color);
+	}
+	&:hover,
+	&:active{
+		color: var(--link-color-active);
+	}
+
+	&-outer:hover,
+	&:hover{
+		.link-text{
+			&:before{
+				opacity: 0;
+				animation: link-to-top var(--link-time) var(--ease-out) 1;
+			}
+			&:after{
+				opacity: 1;
+				animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+			}
+		}
+	}
+
+	
+	&-under{
+		background-image: linear-gradient(var(--link-line-color),var(--link-line-color));
+		background-position: 0% 100%;
+		background-size: 0 var(--link-height);
+		background-repeat: no-repeat;
+		transition: var(--link-transition);
+		padding-bottom: var(--link-padding);
+
+		&:hover{
+			color: var(--link-color-active);
+			background-size: 100% var(--link-height);
+			background-position: 0 100%;
+		}
+	}
+	&-wide{
+		@extend .link-under;
+		background-size: 100% var(--link-height);
+		background-position: 0 100%;
+		&:hover{
+			background-position: 0 100%;
+			background-size: 0 var(--link-height);
+		}
+	}
+
+}
+.link-text{
+	color: transparent;
+	position: relative;
+	&:before,
+	&:after{
+		content: attr(data-text);
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transition: var(--link-time) var(--ease-out);
+		will-change: transform;
+		transform-origin: 50% 50% 0.5em;
+	}
+	&:before{
+		animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+		color: var(--link-color);
+	}
+	&:after{
+		color: var(--link-color-active);
+		animation: link-to-top var(--link-time) var(--ease-out) 1;
+		opacity: 0;
+	}
+}
+
+
+
+@include keyframes(link-from-bottom) {
+	0% {transform: rotate3d(1, 0, 0, 90deg);}
+	100% {transform: rotate3d(0, 0, 0, 90deg);}
+}
+@include keyframes(link-to-top) {
+	0% {transform: rotate3d(0, 0, 0, 90deg);}
+	100% {transform: rotate3d(-1, 0, 0, 90deg);}
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="page-404 page-dark">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_nf">
+		<div class="container">
+			<div class="title title-xl title-appear">
+				страница не найдена
+			</div>
+			<div class="nf__line">
+				<a href="./index.html" class="link nf__btn">
+					На главную
+				</a>
+			</div>
+		</div>
+	</section>
+	
+	<svg class="nf__under ico"><use xlink:href="./img/logo.svg#logo-short" /></svg>
+
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

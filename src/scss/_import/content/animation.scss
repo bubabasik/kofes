@@ -1,0 +1,25 @@
+.anim-item{
+
+}
+.anim-parent{
+	&.anim-active{
+		.anim-appear{
+			opacity: 1;
+		}
+	}
+}
+.anim-appear{
+	opacity: 0;
+	transition: var(--appear-trans);
+
+	&.anim-active{
+		opacity: 1;
+	}
+}
+.dl{
+	@for $i from 0 through 40 {
+		&-#{$i} {
+			transition-delay: calc( #{$i}  * .1s + var(--anim-delay))!important;
+		}
+	}
+}

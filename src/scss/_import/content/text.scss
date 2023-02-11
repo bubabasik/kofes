@@ -1,0 +1,220 @@
+.text{
+	--text-fz: 14;
+	--text-lh: 1.25;
+	--text-mb: 30;
+	--text-head-before: var(--text-mb);
+	--text-head-after: var(--text-mb);
+	font-size: calc(var(--text-fz) * var(--fz));
+	line-height: var(--text-lh);
+
+	&-md{
+		--text-fz: 16;
+	}
+	&-xl{
+		--text-fz: 20;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6{
+		margin: calc(var(--text-head-before) * var(--fz))  0 calc(var(--text-head-after) * var(--fz));
+		font-weight: 400;
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	h1{
+		font-size: v(28);
+		text-transform: uppercase;
+	}
+	h2{
+		font-size: v(22);
+		text-transform: uppercase;
+	}
+	h3{
+		font-size: v(26);
+	}
+	h4{
+		font-size: v(22);
+		font-weight: 500;
+	}
+	h5{
+		font-size: v(18);
+		font-weight: 500;
+	}
+	h6{
+		font-size: v(16);
+		font-weight: 500;
+	}
+
+	p{
+		margin: 0 0 calc(var(--text-mb) * var(--fz));
+	}
+
+	strong{
+		font-weight: 500;
+	}
+
+
+	li{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		&:not(.checklist) {
+			li{
+				position: relative;
+				padding-left: v(30);
+				&:before{
+					content: '';
+					display: inline-block;
+					vertical-align: top;
+					position: absolute;
+					width: v(4);
+					height: v(4);
+					left: v(13);
+					top: calc(var(--text-fz) * var(--fz) * var(--text-lh) / 2);
+					transform: translateY(-50%);
+					border-radius: 50%;
+					background: currentColor;
+				}
+			}
+		}
+	}
+	ol{
+		list-style: none;
+		counter-reset: myCounter;
+		margin: 0;
+		padding: 0;
+		li{
+			position: relative;
+			padding-left: v(30);
+			&:before{
+				counter-increment: myCounter;
+				content: counter(myCounter)'.';
+				font-weight: 700;
+				display: inline-block;
+				vertical-align: top;
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: currentColor;
+			}
+		}
+	}
+	a{
+		&:not(.btn) {
+			@extend .link;
+			--link-padding: 1px;
+		}
+	}
+	blockquote{
+		
+	}
+
+	@include media($w-md) {
+		--text-fz: 18;
+		--text-mb: 20;
+		--text-head-before: 40;
+		h1{
+			font-size: v(40);
+		}
+		h2{
+			font-size: v(36);
+		}
+		h3{
+			font-size: v(30);
+		}
+		h4{
+			font-size: v(18);
+		}
+		h5{
+			font-size: v(16);
+		}
+		h6{
+			font-size: v(14);
+		}
+
+	}
+	@include media($w-lg) {
+		--text-fz: 22;
+		--text-head-before: 60;
+		h1{
+			font-size: v(60);
+		}
+		h2{
+			font-size: v(46);
+		}
+		h3{
+			font-size: v(36);
+		}
+		h4{
+			font-size: v(22);
+			line-height: 1.25;
+		}
+		h5{
+			font-size: v(20);
+			line-height: 1.25;
+		}
+		h6{
+			font-size: v(18);
+			line-height: 1.25;
+		}
+
+		ul,
+		ol{
+			letter-spacing: -0.03em;
+		}
+	}
+	
+	@include media($w-xl) {
+		--text-fz: 26;
+		--text-head-before: 80;
+
+		h1{
+			font-size: v(80);
+		}
+		h2{
+			font-size: v(56);
+		}
+		h3{
+			font-size: v(42);
+		}
+		h4{
+			font-size: v(26);
+		}
+		h5{
+			font-size: v(22);
+		}
+		h6{
+			font-size: v(20);
+		}
+		ul{
+			&:not(.checklist) {
+				li{
+					padding-left: v(39);
+					&:before{
+						width: v(5);
+						height: v(5);
+						left: v(17);
+					}
+				}
+			}
+		}
+		ol{
+			li{
+				padding-left: v(39);
+			}
+		}
+	}
+}

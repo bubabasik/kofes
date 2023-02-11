@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="page-gray">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_ptop section_ptop-category">
+		<div class="container">
+			
+			<div class="ptop__row ptop__row-main">
+				<div class="ptop__left">
+					<ul class="bread">
+						<li><a href="./catalog.html" class="link">Каталог</a></li>
+					</ul>
+				</div>
+				<div class="ptop__right">
+					<div class="title">
+						<h1 class="title-anim">продажа кофемашин</h1>
+					</div>
+					<div class="ptop__text">
+						При открытии кафе или кофейни можно столкнуться со множеством проблем. Увеличение числа клиентов может отразиться на качестве напитка и времени его подачи. В такой ситуации даже профессионализм бариста теряет свою актуальность. Чтобы защитить себя от подобных ситуаций, советуем рассмотреть вариант покупки суперавтоматического оборудования.
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section_category">
+		<div class="container">
+
+			
+
+			<div class="cat__cont">
+				<div class="bt bt-anim"></div>
+				
+				<div class="cat__aside">
+					
+					<div class="cat__name"><div class="title-anim">каталог <br>кофемашин</div> </div>
+
+					<div class="filter">
+						
+						<div class="filter__outer">
+							<div class="filter__name">Вид</div>
+							<a href="./category-auto.html" class="link btn btn-xs">
+								<span class="btn-text">Автоматические</span> <sup>8</sup>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-rozh.html" class="link btn btn-xs">
+								<span class="btn-text">Рожковые</span> <sup>4</sup>
+								<span class="btn-fill"></span>
+							</a>
+						</div>
+						
+						<div class="filter__outer d-none d-lg-flex">
+							<div class="filter__name">Другие категории</div>
+							<a href="./category-sale.html" class="link btn btn-xs">
+								<span class="btn-text">Продажа кофемашин</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-office.html" class="link btn btn-xs">
+								<span class="btn-text">Кофемашины для офиса</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-coffee.html" class="link btn btn-xs">
+								<span class="btn-text">Кофе</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-coffee.html" class="link btn btn-xs">
+								<span class="btn-text">Топинги</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-coffee.html" class="link btn btn-xs">
+								<span class="btn-text">Сиропы</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./category-coffee.html" class="link btn btn-xs">
+								<span class="btn-text">Чай</span>
+								<span class="btn-fill"></span>
+							</a>
+							<a href="./catalog.html" class="link btn btn-xs">
+								<span class="btn-text">Весь каталог</span>
+								<span class="btn-fill"></span>
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="cat__content">
+					
+					<div class="cat__list">
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-1.png",
+							"name" : "Кофемашина PROXIMA F2 H (DR COFFEE F2 H)",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "423 325 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", },
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-2.png",
+							"name" : "Кофемашина PROXIMA M12 PLUS",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: true,
+							"weight" 				: false,
+							"price_num" 		: "192 674 р.",
+							"special_num" 	: "160 000 р.",
+							"weight_num" 		: "",},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: false,
+							"default"				: "without",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: false,
+							"kg8"					: false} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-3.png",
+							"name" : "Кофемашина WMF 1200",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "450 000 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "",},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: true,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-1.png",
+							"name" : "Кофемашина PROXIMA F2 H (DR COFFEE F2 H)",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "423 325 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "",},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-2.png",
+							"name" : "Кофемашина PROXIMA M12 PLUS",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: true,
+							"weight" 				: false,
+							"price_num" 		: "192 674 р.",
+							"special_num" 	: "160 000 р.",
+							"weight_num" 		: "",},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: false,
+							"default"				: "without",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: false,
+							"kg8"					: false} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-3.png",
+							"name" : "Кофемашина WMF 1200",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "450 000 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", },
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: true,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-1.png",
+							"name" : "Кофемашина PROXIMA F2 H (DR COFFEE F2 H)",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "423 325 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", 	},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-2.png",
+							"name" : "Кофемашина PROXIMA M12 PLUS",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: true,
+							"weight" 				: false,
+							"price_num" 		: "192 674 р.",
+							"special_num" 	: "160 000 р.",
+							"weight_num" 		: "", },
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: false,
+							"default"				: "without",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: false,
+							"kg8"					: false} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-3.png",
+							"name" : "Кофемашина WMF 1200",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "450 000 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", },
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: true,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-1.png",
+							"name" : "Кофемашина PROXIMA F2 H (DR COFFEE F2 H)",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "423 325 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", 	},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-2.png",
+							"name" : "Кофемашина PROXIMA M12 PLUS",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: true,
+							"weight" 				: false,
+							"price_num" 		: "192 674 р.",
+							"special_num" 	: "160 000 р.",
+							"weight_num" 		: "", },
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: false,
+							"default"				: "without",
+							"without"				:	false, 
+							"kg12"					: false,
+							"kg10"					: false,
+							"kg8"					: false} })
+						</div>
+
+						<div class="cat__outer">
+							@@include('./_inc/_item-product.html', {
+							"image"	: "pr-3.png",
+							"name" : "Кофемашина WMF 1200",
+							"gift"	: false,
+
+							"sub_status"	: false,
+							"sub"					: "",
+
+							"roast_status"	: false,
+							"roast"					:	[],
+
+							"price"		: {
+							"price" 				: true,
+							"special" 			: false,
+							"weight" 				: false,
+							"price_num" 		: "450 000 р.",
+							"special_num" 	: "",
+							"weight_num" 		: "", 	},
+
+							"options" 	: {
+							"status"				: false,
+							"more"					: true,
+							"default"				: "kg12",
+							"without"				:	false, 
+							"kg12"					: true,
+							"kg10"					: true,
+							"kg8"					: true} })
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="cat__cont filter filter-mob">
+				<div class="bt bt-anim"></div>
+
+				<div class="filter__outer">
+					<div class="filter__name">Другие категории</div>
+					<a href="./category-sale.html" class="link btn btn-xs">
+						<span class="btn-text">Продажа кофемашин</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./category-office.html" class="link btn btn-xs">
+						<span class="btn-text">Кофемашины для офиса</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./category-coffee.html" class="link btn btn-xs">
+						<span class="btn-text">Кофе</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./category-coffee.html" class="link btn btn-xs">
+						<span class="btn-text">Топинги</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./category-coffee.html" class="link btn btn-xs">
+						<span class="btn-text">Сиропы</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./category-coffee.html" class="link btn btn-xs">
+						<span class="btn-text">Чай</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./catalog.html" class="link btn btn-xs">
+						<span class="btn-text">Весь каталог</span>
+						<span class="btn-fill"></span>
+					</a>
+				</div>
+
+			</div>
+
+
+		</div>
+	</section>
+
+	@@include('./_inc/_sect-select.html')
+
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

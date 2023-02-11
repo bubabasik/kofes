@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="page-dark">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_ptop">
+		<div class="container">
+			
+			<div class="ptop__row ptop__row-main">
+				<div class="ptop__left">
+					<ul class="bread">
+						<li><a href="./index.html" class="link">Главная</a></li>
+					</ul>
+				</div>
+				<div class="ptop__right">
+					<div class="title">
+						<h1 class="title-anim">контакты</h1>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section_contact dark">
+		<div class="container">
+			
+			<div class="contact__top">
+				
+				<div class="contact__time">
+					<span>ПН — ПТ:</span> 10:00 - 18:30
+				</div>
+				<div class="contact__address">
+					<div class="contact__address_text">
+						г. Санкт-Петербург, <br>
+						Свердловская набережная, 58
+					</div>
+					<button class="contact__address_btn btn btn-xs copy__coord" type="button" data-copy="58.388185, 33.906550" data-default="Скопировать координаты" data-copied="Скопировано">
+						<span class="btn-text">Скопировать координаты</span>
+						<span class="btn-fill"></span>
+					</button>
+				</div>
+				<div class="contact__call">
+					<a href="tel:+78127153900" class="link link-under contact__phone">+7 812 715-39-00</a>
+					<a href="mailto:info@kofes.ru" class="link link-under contact__email">info@kofes.ru</a>
+				</div>
+
+			</div>
+
+			<div class="contact__cont">
+				<div class="bt bt-anim anim-item"></div>
+				<div class="bt bt-bottom bt-anim anim-item"></div>
+				<div class="scheme">
+					<div class="scheme__title">Схема проезда</div>
+					<div class="scheme__slider">
+
+						<a href="./images/scheme.jpg" class="scheme__slide img-item">
+							<img src="./images/scheme.jpg" alt="">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#scale" /></svg>
+						</a>
+
+						<a href="./images/scheme.jpg" class="scheme__slide img-item">
+							<img src="./images/scheme.jpg" alt="">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#scale" /></svg>
+						</a>
+
+						<a href="./images/scheme.jpg" class="scheme__slide img-item">
+							<img src="./images/scheme.jpg" alt="">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#scale" /></svg>
+						</a>
+
+					</div>
+				</div>
+				<div class="contact__map">
+					<div id="map" class="map__item"></div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+
+	@@include('./_inc/_sect-bid.html', {
+	"class"			: "dark",
+	"title"			: "задайте ваш <br>вопрос",
+	"textarea"	: "Ваш вопрос, отзыв или пожелание",
+	"phone"			: false,
+	"email"			: false,	})
+	
+
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+	<script>
+		$(function(){
+
+			var images = $('.scheme__slider').html();
+			$('.scheme__slider')
+			.after('<div class="scheme__gallery">' + images + '</div>');
+			$('.scheme__gallery').find('.scheme__slide').attr('data-fancybox', 'product');
+
+			$(document).on('click', '.scheme__slider a', function(e){
+				e.preventDefault();
+				var 
+				$self = $(this);
+				var $index = parseInt($self.attr('data-slick-index'));
+				$('.scheme__gallery').find('a').eq($index).click();
+			})
+
+			ymaps.ready(function () {
+				var myMap = new ymaps.Map('map', {
+					center: [59.956219, 30.406787],
+					zoom: 16,
+					controls: ['zoomControl']
+				}, {
+					searchControlProvider: 'yandex#search'
+				});
+
+				centerPoint = new ymaps.Placemark(myMap.getCenter(), {}, {
+					iconLayout: 'default#image',
+					iconImageHref: './img/icon-label.svg',
+					iconImageSize: [30, 39],
+					iconImageOffset: [-15, -39]
+				});
+
+
+				myMap.geoObjects.add(centerPoint);
+			});
+
+		})
+	</script>
+
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

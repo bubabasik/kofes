@@ -1,0 +1,139 @@
+.page-gray{
+	.ucard__item{
+		background: #fff;
+	}
+}
+.section_ucard{
+	margin-top: v(65);
+	margin-bottom: v(-50);
+
+	& + .section_calc{
+		margin-top: v(82);
+	}
+
+	@include media($w-lg) {
+		margin-top: v(120);
+		margin-bottom: 0;
+	}
+	@include media($w-xl) {
+		& + .section_category{
+			margin-top: v(204);
+		}
+		& + .section_calc{
+			margin-top: v(89);
+		}
+	}
+}
+.ucard__cont{
+	// border-top: 1px solid var(--line-gray);
+	padding-top: v(32);
+
+	@include media($w-lg) {
+		padding-top: v(40);
+	}
+}
+.ucard__row{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 v(-8);
+}
+.ucard__outer{
+	flex: 0 0 100%;
+	max-width: 100%;
+	padding: 0 v(8);
+	margin-bottom: v(120);
+	display: flex;
+
+	@include media($w-md) {
+		flex: 0 0 50%;
+		max-width: 50%;
+
+		&-wide{
+			flex: 0 0 100%;
+			max-width: 100%;
+			.ucard__item{
+				width: calc(50% - #{v(8)});
+			}
+		}
+	}
+	@include media($w-lg) {
+		flex: 0 0 25%;
+		max-width: 25%;
+
+		&-wide{
+			flex: 0 0 50%;
+			max-width: 50%;
+			.ucard__img{
+				margin-left: -17%;
+				margin-right: -17%;
+			}
+		}
+	}
+}
+.ucard__item{
+	font-size: v(16);
+	letter-spacing: -0.03em;
+	background: #fff;
+	background: var(--soft-gray);
+	border-radius: v(5);
+	min-height: v(250);
+	font-weight: 500;
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+
+	&.light{
+		color: #fff;
+	}
+
+	@include media($w-lg) {
+		font-size: v(20);
+		min-height: v(350);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+		min-height: v(475);
+	}
+}
+.ucard__text{
+	padding: v(16) v(31) v(16) v(16);
+
+	@include media($w-lg) {
+		padding: v(20);
+	}
+}
+.ucard__img{
+	margin-top: auto;
+	text-align: center;
+	padding: 0 v(19);
+	margin-bottom: v(-70);
+
+	img{
+		height: v(220);
+	}
+
+	@include media($w-md) {
+		padding: 0;
+		&-right{
+			text-align: right;
+			img{
+				transform: translateX(41%);
+			}
+		}
+		&-left{
+			text-align: left;
+			img{
+				transform: translateX(-50%);
+			}
+		}
+	}
+	@include media($w-lg) {
+
+	}
+	@include media($w-xl) {
+		margin-bottom: v(-95);
+		img{
+			height: auto;
+		}
+	}
+}

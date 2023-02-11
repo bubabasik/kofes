@@ -1,0 +1,165 @@
+.cart__list{
+	margin-bottom: v(60);
+	@include media($w-lg) {
+		margin-bottom: v(80);
+	}
+}
+.cart__item{
+	display: flex;
+	// align-items: flex-start;
+	padding: v(13) 0 v(17);
+	border-bottom: 1px solid var(--line-gray);
+	position: relative;
+	z-index: 1;
+
+	&:hover{
+		z-index: 5;
+	}
+
+	@include media($w-lg) {
+		padding: v(20) 0;
+	}
+}
+.cart__img{
+	flex: 0 0 v(100);
+	max-width: v(100);
+	padding: 0 v(11);
+
+	@include media($w-lg) {
+		flex: 0 0 v(200);
+		max-width: v(200);
+	}
+	@include media($w-xl) {
+		padding: v(36) v(36) 0;
+	}
+}
+.cart__data{
+	flex: 0 0 calc(100% - #{v(100)});
+	max-width: calc(100% - #{v(100)});
+	padding-left: v(10);
+	display: flex;
+	flex-flow: column;
+
+	@include media($w-lg) {
+		flex: 0 0 calc(100% - #{v(200)});
+		max-width: calc(100% - #{v(200)});
+		padding-left: v(20);
+	}
+}
+.cart__gift{
+	display: inline-flex;
+	align-items: center;
+	font-size: v(12);
+	margin-bottom: v(5);
+	svg{
+		width: v(20);
+		height: v(20);
+		margin-right: v(5);
+		stroke: var(--carrot-2);
+	}
+
+	@include media($w-lg) {
+		font-size: v(20);
+		margin-bottom: v(10);
+		svg{
+			width: v(33);
+			height: v(33);
+			margin-right: v(10);
+		}
+	}
+}
+.cart__name{
+	--link-color: var(--black);
+	font-size: v(14);
+	font-weight: 500;
+
+	@include media($w-lg) {
+		letter-spacing: -0.03em;
+		font-size: v(20);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+	}
+}
+.cart__opt{
+	font-size: v(14);
+	margin-top: v(4);
+	padding-top: 0;
+	position: relative;
+	z-index: 5;
+
+
+	.pr__opt{
+		&_val{
+			padding: 0 v(14);
+		}
+	}
+
+	@include media($w-lg) {
+		margin-top: v(20);
+		font-size: v(16);
+	}
+	@include media($w-xl) {
+		.pr__opt{
+			&_item{
+				font-size: v(20);
+			}
+		}
+	}
+}
+.cart__bottom{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: v(20);
+	margin-top: auto;
+
+	@include media($w-lg) {
+		justify-content: flex-end;
+	}
+}
+.cart__qty{
+	width: v(75);
+	.qty{
+		&__input{
+			height: v(26);
+		}
+		&__btn{
+			width: v(27);
+		}
+	}
+	@include media($w-lg) {
+		width: v(98);
+		margin-right: v(34);
+		.qty{
+			&__input{
+				height: v(33);
+			}
+		}
+	}
+
+}
+.cart__del{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin-right: 10px;
+	margin-top: 6px;
+	svg{
+		fill: var(--line-gray);
+		width: v(14);
+		height: v(14);
+	}
+
+	@include media($w-lg) {
+		margin: 0;
+		svg{
+			width: v(18);
+			height: v(18);
+		}
+	}
+}

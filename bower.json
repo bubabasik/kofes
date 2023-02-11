@@ -1,0 +1,23 @@
+{
+  "name": "muzyka",
+  "authors": [
+    "Maxim Brutski <bu.babasik@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^5.0.0",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2"
+  },
+  "devDependencies": {}
+}

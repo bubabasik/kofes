@@ -1,0 +1,143 @@
+.section_cols{
+	padding-top: v(120);
+	padding-bottom: v(120);
+
+	@include media($w-lg) {
+		padding-top: v(180);
+		padding-bottom: v(180);
+	}
+	@include media($w-xl) {
+		padding-top: v(250);
+		padding-bottom: v(250);
+	}
+}
+.cols__top{
+
+	// border-bottom: 1px solid var(--line-gray);
+	padding-bottom: v(17);
+
+	@include media($w-md) {
+		display: flex;
+		align-items: flex-end;
+	}
+	@include media($w-xl) {
+		padding-bottom: v(40);
+		.title{
+			max-width: v(1093);
+		}
+	}
+}
+.cols__btn{
+	margin-top: v(9);
+	.btn{
+		--btn-height: 30;
+		--btn-padding: 15;
+		font-size: v(14);
+		letter-spacing: 0;
+	}
+
+	@include media($w-md) {
+		white-space: nowrap;
+		margin-left: auto;
+	}
+	@include media($w-lg) {
+		.btn{
+			--btn-height: 43;
+			--btn-padding: 23;
+			font-size: v(20);
+		}
+	}
+}
+.cols__cont{
+	--bt-pos: calc(8 * var(--fz));
+	margin: 0 v(-8) v(-8);
+	padding-top: v(32);
+	position: relative;
+
+	@include media($w-xl) {
+		padding-top: v(40);
+	}
+}
+.cols__outer{
+	padding: 0 v(8);
+	margin-bottom: v(8);
+}
+.cols__item{
+	position: relative;
+	border-radius: v(5);
+	overflow: hidden;
+	background: var(--soft-gray);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-flow: column;
+	min-height: v(328);
+
+	&.light{
+		color: #fff;
+	}
+	&-xl{
+		.cols__img{
+			min-height: v(233);
+		}
+	}
+
+	&-bottom{
+		.cols__img{
+			margin-top: auto;
+			align-items: flex-end;
+			justify-content: flex-start;
+			margin-bottom: 0;
+			margin-left: 0;
+		}
+	}
+
+	@include media($w-xl) {
+		min-height: v(510);
+		&-xl{
+			.cols__text{
+				padding: v(30) v(30) 0;
+			}
+			.cols__img{
+				// margin-top: v(66);
+				// margin-bottom: v(121);
+				min-height: v(325);
+				margin-bottom: v(80);
+			}
+		}
+	}
+}
+.cols__text{
+	font-size: v(16);
+	letter-spacing: -0.03em;
+	font-weight: 500;
+	padding: v(16) v(16) 0;
+
+	@include media($w-md) {
+		font-size: v(18);
+	}
+	@include media($w-lg) {
+		font-size: v(18);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+		padding: v(20) v(20) 0;
+	}
+}
+.cols__img{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: v(10) v(50) v(10);
+	img{
+		max-width: v(228);
+	}
+
+	@include media($w-xl) {
+		margin: v(25) v(59) v(40);
+		img{
+			max-width: v(310);
+		}
+	}
+}

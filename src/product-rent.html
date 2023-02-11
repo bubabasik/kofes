@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body>
+
+	@@include('./_inc/_header.html')
+
+	<!-- PRODUCT -->
+	<section class="section_product">
+		<div class="container">
+			<div class="product__cont">
+				
+				<div class="product__bread">
+					<ul class="bread">
+						<li><a href="./category-rent.html" class="link">Аренда рожковых кофемашин</a></li>
+					</ul>
+					<div class="product__title title title-sm">
+						<h1>аренда кофемашины Carimali Nimble 2 GR с&nbsp;кофемолкой</h1>
+					</div>
+				</div>
+				<div class="product__media">
+					
+					<div class="product__image">
+						<img src="./images/product/product-big.png" alt="">
+					</div>
+					<div class="product__thumbs">
+						<a href="#" data-fancybox="product" class="product__thumb">
+							<img src="./images/product/thumb-rent-1.png">
+						</a>
+						<a href="#" data-fancybox="product" class="product__thumb">
+							<img src="./images/product/thumb-rent-2.png">
+						</a>
+						<a href="#" data-fancybox="product" class="product__thumb">
+							<img src="./images/product/thumb-rent-3.png">
+						</a>
+						<a href="#" data-fancybox="product" class="product__thumb">
+							<img src="./images/product/thumb-rent-4.png">
+						</a>
+						<a href="#" data-fancybox="product" class="product__thumb product__thumb-video">
+							<img src="./images/product/thumb-video.png">
+							<svg class="ico ico-center"><use xlink:href="./img/sprite.svg#play" /></svg>
+						</a>
+					</div>
+
+				</div>
+				<div class="product__data">
+					<div class="product__preview text text-md">
+						Кофемашина Carimali Nimble 2 GR используется на предприятиях общественного питания и торговли, в офисах и гостиницах для приготовления кофе эспрессо и капучино. Модель оснащена краном подачи пара, краном горячей воды и встроенной помпой.
+					</div>
+
+					<div class="prodgrad">
+						<div class="prodgrad__row prodgrad__row-head">
+							<div class="prodgrad__name">Закупка кофе в месяц, кг</div>
+							<div class="prodgrad__text">Цена аренды в месяц, руб</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">10кг</div>
+							<div class="prodgrad__text">16 000</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">12кг</div>
+							<div class="prodgrad__text">8 000</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">15кг</div>
+							<div class="prodgrad__text"><strong>Бесплатно</strong></div>
+						</div>
+						<div class="prodgrad__row prodgrad__row-bottom">
+							<div class="prodgrad__name">Предоставляем скидку 30% на каждый кг кофе сверх объема.</div>
+							<div class="prodgrad__text">Стоимость аренды зависит от закупки кофе в месяц и указана для смеси “Диана”.</div>
+						</div>
+					</div>
+
+					<div class="price">
+						
+						<div class="price__buttons">
+							<div class="price__one">
+								<a href="#modal-one" class="btn btn-black modalshow">
+									<span class="btn-text">Заказать в 1 клик</span>
+									<span class="btn-fill"></span>
+								</a>
+							</div>
+							<div class="price__cart">
+								<div class="price__add">
+									<a href="#" class="btn">
+										<span class="btn-text">В корзину</span>
+										<span class="btn-fill"></span>
+									</a>
+								</div>
+								<div class="price__qty">
+									<div class="price__qty_text">
+										Добавлен
+									</div>
+									<div class="price__qty_cont">
+										<div class="qty">
+											<button class="qty__btn qty__btn-plus"><svg class="ico"><use xlink:href="./img/sprite.svg#plus" /></svg></button>
+											<input type="text" name="NAME" value="1" class="qty__input"/>
+											<button class="qty__btn qty__btn-minus"><svg class="ico"><use xlink:href="./img/sprite.svg#minus" /></svg></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="prodgrad prodgrad-mob">
+						<div class="prodgrad__row prodgrad__row-bottom prodgrad__row-mob">
+							<div class="prodgrad__name">Стоимость аренды зависит от закупки кофе в месяц и указана для смеси “Диана” <br>(80% арабика, 20% робуста).</div>
+							<div class="prodgrad__text">Скидка 30% на каждый кг сверх объема.</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- # PRODUCT -->
+
+	@@include('./_inc/_sect-ucard.html')
+	
+	@@include('./_inc/_sect-calc.html', {"title":"Рассчитайте <br>прибыльность аренды кофемашины"})
+
+	@@include('./_inc/_sect-select-degustation.html')
+
+	@@include('./_inc/_sect-tab-rent.html')
+
+	@@include('./_inc/_sect-modprod.html', {
+	"title"	: "четыре фрегата — <br>наш кофейный бренд премиум класса",
+	"sub"	: "Для создания смеси мы используем лучший кофе от крупнейших обжарщиков России. Это позволяет добиваться стабильности кофейного напитка каждый день.",
+	"pre"	: "кофе",
+	"status"	: {
+	"pre"	: true,
+	"sub"	: true, },  })
+
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

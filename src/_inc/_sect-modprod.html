@@ -1,0 +1,147 @@
+<section class="section_modprod">
+	<div class="container">
+		@@if (status.pre === true) {
+		<div class="modprod__pre text">@@pre</div> }
+
+		<div class="title modprod__title">
+			<div class="title-appear">@@title</div>
+		</div>
+
+		@@if (status.sub === true) {
+		<div class="modprod__sub text text-md">
+			@@sub
+		</div> }
+
+		<div class="modprod__cont">
+			<div class="bt bt-anim anim-item"></div>
+			
+			<div class="modprod__row">
+				<div class="modprod__outer">
+					@@include('./_item-product.html', {
+					"image"	: "pr-freg-blue.png",
+					"name" : "Четыре фрегата “Диана”",
+					"gift"	: false,
+					"class"	: "pr__item-md",
+
+					"sub_status"	: true,
+					"sub"					: "80% арабика / 20% робуста",
+
+					"roast_status"	: true,
+					"roast"					:	['active','active','active','','','','',''],
+
+					"price"		: {
+					"price" 				: true,
+					"special" 			: false,
+					"weight" 				: true,
+					"price_num" 		: "1 600 р.",
+					"special_num" 	: "",
+					"weight_num" 		: "1 кг", },
+
+					"options" 	: {
+					"status"				: false,
+					"more"					: true,
+					"default"				: "kg12",
+					"without"				:	false, 
+					"kg12"					: false,
+					"kg10"					: true,
+					"kg8"					: true} })
+				</div>
+
+				<div class="modprod__outer">
+					@@include('./_item-product.html', {
+					"image"	: "pr-freg-green.png",
+					"name" : "Четыре фрегата “Аврора”",
+					"gift"	: false,
+					"class"	: "pr__item-md",
+
+					"sub_status"	: true,
+					"sub"					: "90% арабика / 10% робуста",
+
+					"roast_status"	: true,
+					"roast"					:	['active','active','active','active','active','active','',''],
+
+					"price"		: {
+					"price" 				: true,
+					"special" 			: false,
+					"weight" 				: true,
+					"price_num" 		: "1 800 р.",
+					"special_num" 	: "",
+					"weight_num" 		: "1 кг", 	},
+
+					"options" 	: {
+					"status"				: false,
+					"more"					: false,
+					"default"				: "without",
+					"without"				:	false, 
+					"kg12"					: false,
+					"kg10"					: false,
+					"kg8"					: false} })
+				</div>
+
+				<div class="modprod__outer">
+					@@include('./_item-product.html', {
+					"image"	: "pr-freg-yellow.png",
+					"name" : "Четыре фрегата “Бразилия”",
+					"gift"	: false,
+					"class"	: "pr__item-md",
+
+					"sub_status"	: true,
+					"sub"					: "100% арабика",
+
+					"roast_status"	: true,
+					"roast"					:	['active','active','active','active','active','active','',''],
+
+					"price"		: {
+					"price" 				: true,
+					"special" 			: false,
+					"weight" 				: true,
+					"price_num" 		: "2 000 р.",
+					"special_num" 	: "",
+					"weight_num" 		: "1 кг", 	},
+
+					"options" 	: {
+					"status"				: false,
+					"more"					: false,
+					"default"				: "without",
+					"without"				:	false, 
+					"kg12"					: false,
+					"kg10"					: false,
+					"kg8"					: false} })
+				</div>
+
+				<div class="modprod__outer">
+					@@include('./_item-product.html', {
+					"image"	: "pr-freg-blue.png",
+					"name" : "Четыре фрегата “Диана”",
+					"gift"	: false,
+					"class"	: "pr__item-md",
+
+					"sub_status"	: true,
+					"sub"					: "80% арабика / 20% робуста",
+
+					"roast_status"	: true,
+					"roast"					:	['active','active','active','','','','',''],
+
+					"price"		: {
+					"price" 				: true,
+					"special" 			: false,
+					"weight" 				: true,
+					"price_num" 		: "1 600 р.",
+					"special_num" 	: "",
+					"weight_num" 		: "1 кг", },
+
+					"options" 	: {
+					"status"				: false,
+					"more"					: true,
+					"default"				: "kg12",
+					"without"				:	false, 
+					"kg12"					: false,
+					"kg10"					: true,
+					"kg8"					: true} })
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>

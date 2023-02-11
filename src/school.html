@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="page-dark page-school">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_ptop">
+		<div class="container">
+			
+			<div class="ptop__row ptop__row-main">
+				<div class="ptop__left">
+					<ul class="bread">
+						<li><a href="./blog.html" class="link">Главная</a></li>
+					</ul>
+				</div>
+				<div class="ptop__right">
+					<div class="title title-sm">
+						<h1 class="title-anim">Школа бариста в Санкт&#8209;Петербурге</h1>
+					</div>
+					<div class="ptop__text">
+						Каждый курс — это максимум практики без воды и лишних разговоров. 
+						<br>Мы нацелены на быстрый выпуск человека в работу, который сможет выдавать напитки высокого качества.
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section_school">
+		<div class="container">
+			
+			<div class="school__row school__row-slider">
+				
+				<div class="school__capt">
+					Основная программа для кофеен, кафе и ресторанов
+				</div>
+				<div class="school__inner">
+					
+					<div class="card__slider">
+						
+						<div class="card__slide">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-barista.jpg",
+							"name" 		: "Базовый курс бариста",
+							"descr" 	: "Научим вас основным навыкам приготовления кофе на эспрессомашине прямо перед открытием.",
+							"price" 	: "от 8 500 р.",
+							"number" 	: "1 занятие",
+							"time" 		: "3 часа" })
+						</div>
+						
+						<div class="card__slide">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-barista-plus.jpg",
+							"name" 		: "Расширенный курс бариста",
+							"descr" 	: "Вы получите обширные знания о кофе, его видах, обработке и обжарке. Научитесь настраивать и использовать профессиональное оборудование, готовить все основные кофейные напитки, а также разрабатывать кофейные карты.",
+							"price" 	: "от 21 500 р.",
+							"number" 	: "5 занятий",
+							"time" 		: "15 часов" })
+						</div>
+						
+						<div class="card__slide">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-latte.jpg",
+							"name" 		: "Базовый курс Латте-Арт",
+							"descr" 	: "Как не испортить кофе молоком? <br>Практические упражнения по взбиванию молока. Базовые рисунки и практика",
+							"price" 	: "от 12 000 р.",
+							"number" 	: "3 занятия",
+							"time" 		: "3 часа" })
+						</div>
+						
+						<div class="card__slide">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-alternate.jpg",
+							"name" 		: "Альтернативное заваривание",
+							"descr" 	: "Как не испортить кофе молоком? <br>Практические упражнения по взбиванию молока. Базовые рисунки и практика",
+							"price" 	: "от 12 000 р.",
+							"number" 	: "3 занятия",
+							"time" 		: "3 часа" })
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>	
+			
+			<div class="school__row">
+				
+				<div class="school__capt">
+					Специальные программы
+				</div>
+				<div class="school__inner">
+					
+					<div class="card__row row">
+						
+						<div class="card__outer col-md-6 col-xl-4">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-master.jpg",
+							"name" 		: "Выездной мастер класс",
+							"descr" 	: "Научим вас основным навыкам приготовления кофе на вашей кофемашине.",
+							"price" 	: "от 8 500 р.",
+							"number" 	: "1 занятие",
+							"time" 		: "3 часа" })
+						</div>
+						
+						<div class="card__outer col-md-6 col-xl-4">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-business.jpg",
+							"name" 		: "Тренинг для бизнеса",
+							"descr" 	: "Курс обучения который повысит ваш уровень знаний в целом или же по каким-либо определенным навыкам, составленный для вас персонально.",
+							"price" 	: "Индивидуально",
+							"number" 	: "1 занятие",
+							"time" 		: "" })
+						</div>
+						
+						<div class="card__outer col-md-6 col-xl-4">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-sensory.jpg",
+							"name" 		: "Sensory Skills",
+							"descr" 	: "Курс по сенсорному восприятию кофе.",
+							"price" 	: "от 21 000 р.",
+							"number" 	: "",
+							"time" 		: "9 часов" })
+						</div>
+						
+
+
+					</div>
+
+				</div>
+
+			</div>	
+			
+			<div class="school__row">
+				
+				<div class="school__capt">
+					Услуги для бизнеса
+				</div>
+				<div class="school__inner">
+					
+					<div class="card__row row">
+						
+						<div class="card__outer col-xl-8">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-consult.jpg",
+							"name" 		: "Личный консультант при открытии кофейни",
+							"descr" 	: "Помощь в управлении заведением или в открытии бизнеса, справочная поддержка по любым вопросам связанным с кофейным бизнесом от отпытного бариста и управляющего в сфере общепита.",
+							"price" 	: "от 6 000 р.",
+							"number" 	: "",
+							"time" 		: "" })
+						</div>
+						
+						<div class="card__outer col-md-6 col-xl-4">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-coffee.jpg",
+							"name" 		: "Составление кофейной карты",
+							"descr" 	: "Разработка кофейной карты, подбор рецептур напитков, составление калькуляционной карты. Планирование акций, создание уникальных меню для вашего заведения, профессиональный перевод и адаптация меню на английский язык.",
+							"price" 	: "от 21 000 р. / год",
+							"number" 	: "",
+							"time" 		: "" })
+						</div>
+
+
+
+					</div>
+
+				</div>
+
+			</div>	
+			
+			<div class="school__row">
+				
+				<div class="school__capt">
+					Прочее
+				</div>
+				<div class="school__inner">
+					
+					<div class="card__row row">
+						
+						<div class="card__outer col-xl-8">
+							@@include('./_inc/_item-card.html', {
+							"image" 	: "card-partner.jpg",
+							"name" 		: "Партнерская программа",
+							"descr" 	: "Партнерская программа по обучению персонала кафе или небольшой сети, обучение нескольких групп с индивидуальной программой.",
+							"price" 	: "от 12 000 р.",
+							"number" 	: "1 занятие",
+							"time" 		: "3 часа" })
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>	
+
+		</div>
+	</section>
+
+	@@include('./_inc/_sect-bid.html', {
+	"class"			: "dark",
+	"title"			:	"есть вопросы? <br>Свяжитесь с нами",
+	"textarea"	: "Ваш вопрос, отзыв или пожелание",
+	"phone"			: true,
+	"email"			: true,	})
+	
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

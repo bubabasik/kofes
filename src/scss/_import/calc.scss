@@ -1,0 +1,267 @@
+.section_calc{
+	padding-bottom: v(109);
+	& + .section_select{
+		margin-top: v(60);
+	}
+
+	@include media($w-md) {
+		& + .section_select{
+			margin-top: v(0);
+		}
+	}
+	@include media($w-xl) {
+		padding-bottom: v(113);
+		& + .section_select{
+			// margin-top: v(-40);
+		}
+	}
+}
+.calc__cont{
+	padding-top: v(30);
+	position: relative;
+
+
+	@include media($w-lg) {
+		display: flex;
+		justify-content: space-between;
+		padding-top: v(40);
+		// margin-bottom: v(40);
+	}
+}
+.calc__title{
+
+
+	@include media($w-lg) {
+
+		flex: 0 0 42.8%;
+		max-width: 42.8%;
+	}
+	@include media($w-xl) {
+		max-width: v(760);
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+.calc__data{
+	margin-top: v(30);
+
+	@include media($w-lg) {
+		flex: 0 0 57.2%;
+		max-width: 57.2%;
+		margin-top: 0;
+	}
+	@include media($w-xl) {
+		padding-left: v(8);
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+.calc__form{
+
+}
+.calc__list{
+	margin-top: v(30);
+
+	@include media($w-lg) {
+		margin-top: v(60);
+	}
+	@include media($w-xl) {
+		margin-top: v(80);
+	}
+}
+
+.fcalc{
+	color: #fff;
+	background: var(--black-2);
+	border-radius: v(5);
+	padding: v(41) v(16) v(34);
+	&__outer{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: v(21);
+	}
+	&__capt{
+		flex: 0 0 100%;
+		max-width: 100%;
+		font-size: v(14);
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: v(15);
+	}
+	&__num{
+		font-size: v(18);
+		opacity: 0.6;
+		flex: 0 0 v(51);
+		max-width: v(51);
+	}
+	&__name{
+
+		flex: 0 0 calc(100% - #{v(51)});
+		max-width: calc(100% - #{v(51)});
+	}
+	&__inp{
+		flex: 0 0 calc(100% - #{v(54)});
+		max-width: calc(100% - #{v(54)});
+		background: rgba(255, 255, 255, 0.07);
+		border-radius: 5px;
+		position: relative;
+		display: flex;
+		margin-left: v(54);
+	}
+	&__input{
+		display: inline-block;
+		padding: 0 v(20);
+		border: none;
+		font-size: v(12);
+		color: #fff;
+		border: none;
+		background: transparent;
+		flex: auto;
+		min-width: 0;
+		height: v(50);
+
+		&-min{
+			height: v(40);
+		}
+	}
+	&__min{
+		font-size: v(12);
+		opacity: 0.6;
+		white-space: nowrap;
+		margin-right: v(20);
+	}
+	&__label{
+		font-size: v(12);
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+	&__total{
+		font-size: v(14);
+		font-weight: 500;
+		border-top: 1px solid rgba(255,255,255,.2);
+		display: flex;
+		flex-flow: column;
+		padding-top: v(21);
+		padding-left: v(3);
+
+		&_val{
+			font-size: v(16);
+			letter-spacing: -0.03em;
+			color: var(--carrot-2);
+			margin-top: v(10);
+		}
+	}
+	&__subm{
+		margin-top: v(30);
+	}
+	&__submit{
+		--btn-color: #fff;
+		--btn-color-active: var(--black);
+		--btn-fill: #fff;
+		font-size: v(14);
+
+		&:before{
+			border-color: #fff;
+		}
+	}
+
+	@include media($w-md) {
+		padding: v(50);
+		&__capt{
+			flex: 0 0 51%;
+			max-width: 51%;
+			padding-right: v(8);
+			margin-bottom: 0;
+			font-size: v(16);
+		}
+		&__inp{
+			flex: 0 0 49%;
+			max-width: 49%;
+			margin-left: 0;
+		}
+		&__input{
+			height: v(50);
+		}
+		&__subm{
+			padding-left: 51%;
+		}
+		&__total{
+			align-items: flex-end;
+			flex-flow: row;
+			padding-left: 0;
+			font-size: v(18);
+			&_name{
+				flex: 0 0 51%;
+				max-width: 51%;
+				text-align: right;
+				padding-right: v(20);
+			}
+			&_val{
+				flex: 0 0 49%;
+				max-width: 49%;
+				letter-spacing: 0;
+				margin-top: 0;
+				font-size: v(18);
+			}
+		}
+	}
+	@include media($w-lg) {
+		padding: v(40) v(40);
+		&__outer{
+			margin-bottom: v(20);
+		}
+		&__submit{
+			--btn-height: 50;
+			--btn-padding: 25;
+			font-size: v(18);
+			letter-spacing: 0;
+		}
+	}
+	@include media($w-xl) {
+		padding: v(40) v(44) v(55) v(40);
+		&__capt{
+			font-size: v(20);
+			padding-right: v(59);
+		}
+		&__num{
+			font-size: v(20);
+			flex: 0 0 v(50);
+			max-width: v(50);
+			margin-top: v(3);
+		}
+		&__name{
+			flex: 0 0 calc(100% - #{v(50)});
+			max-width: calc(100% - #{v(50)});
+		}
+		&__input{
+			font-size: v(20);
+			height: v(60);
+			padding-left: v(30);
+		}
+		&__min{
+			margin-right: v(30);
+		}
+		&__subm{
+			margin-top: v(40);
+			padding-left: 51%;
+		}
+		&__submit{
+			--btn-height: 60;
+			--btn-padding: 38;
+			font-size: v(20);
+		}
+		&__total{
+			font-size: v(20);
+			padding-top: v(40);
+			margin-top: v(40);
+			&_name{
+				padding-right: v(42);
+			}
+			&_val{
+				font-size: v(20);
+			}
+		}
+	}
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body>
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_ptop">
+		<div class="container">
+			
+			<div class="ptop__row ptop__row-main">
+				<div class="ptop__left">
+					<ul class="bread">
+						<li class="bread__prev">
+							<a href="./blog.html" class="link">
+								<svg class="ico"><use xlink:href="./img/sprite.svg#arrow-left" /></svg>
+							</a>
+						</li>
+						<li><a href="./blog.html" class="link">Блог</a></li>
+					</ul>
+				</div>
+				<div class="ptop__right">
+					<div class="title title-sm">
+						<h1 class="title-anim">полезные материалы</h1>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section_news">
+		<div class="container">
+			
+			<div class="news__cont">
+				<div class="bt bt-anim"></div>
+				
+				<div class="news__subcat">
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Все статьи</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Кофе</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Кофемашины</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Бариста</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Обучение</span>
+						<span class="btn-fill"></span>
+					</a>
+					<a href="./blog.html" class="btn btn-xs">
+						<span class="btn-text">Кофейный бизнес</span>
+						<span class="btn-fill"></span>
+					</a>
+				</div>
+
+				<div class="news__list">
+					
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-green.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'Как выбрать зерновую кофемашину для дома?' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-dark.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'О производителе кофемашин SAECO' })
+					</div>
+					
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-green.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'Как выбрать зерновую кофемашину для дома?' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-dark.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'О производителе кофемашин SAECO' })
+					</div>
+					
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-green.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'Как выбрать зерновую кофемашину для дома?' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-dark.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'О производителе кофемашин SAECO' })
+					</div>
+					
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-green.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'Как выбрать зерновую кофемашину для дома?' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-dark.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'О производителе кофемашин SAECO' })
+					</div>
+					
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-green.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'Как выбрать зерновую кофемашину для дома?' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-yellow.jpg',
+						'cat'	: 'Кофе',
+						'name' : 'Как правильно хранить кофе' })
+					</div>
+
+					<div class="news__outer">
+						@@include('./_inc/_item-news.html', {
+						'image'	: 'news-dark.jpg',
+						'cat'	: 'Кофемашины',
+						'name' : 'О производителе кофемашин SAECO' })
+					</div>
+
+				</div>
+
+
+				<div class="news__page pagination">
+					<div class="bt bt-anim anim-item"></div>
+					<div class="pagination__left">
+						Полезные материалы
+					</div>
+					<div class="pagination__right">
+						<ul class="pagination__list">
+							<li><span>1</span></li>
+							<li><a href="#" class="link">2</a></li>
+							<li><a href="#" class="link">3</a></li>
+							<li><a href="#" class="link">4</a></li>
+							<li><a href="#" class="link pagination__text">Далее</a></li>
+							<li><a href="#" class="link">9</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

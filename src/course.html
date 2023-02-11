@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Название страницы</title>
+
+	@@include('./_inc/_meta.html')
+
+</head>
+<body class="page-course">
+
+	@@include('./_inc/_header.html')
+
+	<section class="section_ptop">
+		<div class="container">
+			
+			<div class="ptop__row ptop__row-main">
+				<div class="ptop__left">
+					<ul class="bread">
+						<li><a href="./catalog.html" class="link">Каталог</a></li>
+					</ul>
+				</div>
+				<div class="ptop__right">
+					<div class="title">
+						<h1 class="title-anim">Базовый курс бариста</h1>
+					</div>
+					<div class="ptop__text">
+						Состоит из 3-х занятий. Вы получите: основные знания о кофе, научитесь пользоваться профессиональным оборудованием, готовить основные кофейные напитки (эспрессо, капучино, латте)
+					</div>
+				</div>
+			</div>
+
+			<div class="ptop__row">
+				<div class="ptop__left">
+					<div class="ptop__mark mark">
+						от 8 500 р.
+					</div>
+				</div>
+				<div class="ptop__right">
+
+					<div class="ptop__col">
+						<div class="ptop__col_item">
+							<div class="ptop__col_name ptop__col_name-sm">3 занятия / 9 часов</div>
+						</div>
+						<div class="ptop__col_item">
+							<div class="ptop__col_name ptop__col_name-sm">до 3-х человек</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="section_course">
+		<div class="container">
+			
+			<!-- ROW -->
+			<div class="course__row">
+				<div class="bt bt-anim anim-item"></div>
+				<div class="course__caption">
+					<div class="course__img img-item">
+						<img src="./images/card/card-barista.jpg" alt="">
+					</div>
+				</div>
+				<div class="course__data">
+					<ul class="course__list checklist checklist-short checklist-empty">
+						<li>Основные знания о кофе</li>
+						<li>Основы работы с кофейным оборудованием</li>
+						<li>Настройка эспрессо на 100% арабике и смесях</li>
+						<li>Работа с молоком</li>
+						<li>Основы латте арта</li>
+						<li>Чистка и уход за оборудованием, знания об основах работы в кофейне и общепите в общем.</li>
+					</ul>
+				</div>
+			</div>
+			<!-- # ROW -->
+			
+			<!-- ROW -->
+			<div class="course__row">
+				<div class="bt bt-anim anim-item"></div>
+				<div class="course__caption">
+					<div class="course__title title-appear">Стоимость курса</div>
+				</div>
+				<div class="course__data">
+					
+					<div class="prodgrad">
+						<div class="prodgrad__row prodgrad__row-head">
+							<div class="prodgrad__name">Количество участников</div>
+							<div class="prodgrad__text">Стоимость курса</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">1 человек</div>
+							<div class="prodgrad__text">12 000</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">2 человека</div>
+							<div class="prodgrad__text">16 000</div>
+						</div>
+						<div class="prodgrad__row">
+							<div class="prodgrad__name">3 человека</div>
+							<div class="prodgrad__text">21 000</div>
+						</div>
+						<div class="prodgrad__btn">
+							<a href="#modal_order" class="btn btn-black modalshow">
+								<span class="btn-text">Заказать</span>
+								<span class="btn-fill"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- # ROW -->
+			
+			<!-- ROW -->
+			<div class="course__row">
+				<div class="bt bt-anim anim-item"></div>
+				<div class="course__caption">
+					<div class="course__title title-appear">дополнительная информация</div>
+				</div>
+				<div class="course__data">
+					<div class="text text-md">
+						<p>Максимальное количество участников данного курса: 3 человека. Для обучения нескольких групп есть отдельное предложение, также предоставляются скидки при обучении нескольких групп. Курс планируется не позднее чем за 7 дней до его начала.</p>
+						<p>Курсы с выездом, срочные курсы, оплачиваются по двойному тарифу, также в курс могут быть включены дополнительные расходы на проживание, транспорт, питание преподавателя, расходы на дополнительные материалы курса по вашим пожеланиям (выбор молока, сливки, альтернативные виды молока, специальный сорт кофе (которого нет в нашей компании), добавки и пр.</p>
+						<p>В курс включено 9 часов занятий из них 1 час теории и инструктаж по технике безопасности, 4 часа настройка эспрессо и работа с эспрессо машиной, 4 часа работа с молокоми основы латте арта. Материалы включённые в занятия(бесплатно): 1 кг выбранного кофе из нашего ассортимента, 8 л молока на человека (не для выездов!), прочие дополнительные материалы на усмотрение вашего преподавателя. По окончанию занятий выдается сертификат.</p>
+					</div>
+				</div>
+			</div>
+			<!-- # ROW -->
+
+		</div>
+	</section>
+
+
+
+	@@include('./_inc/_sect-bid.html', {
+	"class"			: "",
+	"title"			: "записаться <br>на курс",
+	"textarea"	: "Напишите количество человек и другие пожелания",
+	"phone"			: true,
+	"email"			: true,	})
+	
+	@@include('./_inc/_footer.html')
+
+</body>
+</html>

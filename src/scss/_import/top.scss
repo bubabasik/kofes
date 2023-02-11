@@ -1,0 +1,147 @@
+.section_top{
+
+}
+.top__cont{
+	--link-color: #fff;
+	--link-color-active: var(--link-color);
+	border-radius: v(5);
+	position: relative;
+	text-align: center;
+	padding: v(106) v(16) v(55);
+	margin-bottom: v(40);
+	display: flex;
+
+	&_in{
+		display: flex;
+		flex-flow: column;
+		z-index: 5;
+	}
+
+	@include media($w-md) {
+		padding: 0;
+		margin-bottom: 0;
+		text-align: left;
+		&_in{
+			flex-flow: row;
+			position: relative;
+		}
+	}
+	@include media($w-xl) {
+		&_in{
+			min-height: v(760);
+		}
+	}
+}
+.top__bg{
+	border-radius: v(5);
+}
+.top__info{
+	display: flex;
+	flex-flow: column;
+	.line{
+		justify-content: center;
+	}
+
+	@include media($w-md) {
+		justify-content: center;
+		flex: 0 0 55%;
+		max-width: 55%;
+		padding: v(40) 0 v(40) v(30);
+		.line{
+			justify-content: flex-start;
+		}
+	}
+	@include media($w-lg) {
+		justify-content: flex-end;
+		padding: v(80) 0 v(35) v(60);
+	}
+	@include media($w-xl) {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding: v(100) 0 v(45) v(80);
+	}
+}
+.top__title{
+	@extend %title_;
+	font-size: v(28);
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	text-transform: uppercase;
+	strong{
+		font-weight: inherit;
+		color: var(--carrot-2);
+	}
+
+	@include media($w-md) {
+		font-size: v(32);
+	}
+	@include media($w-lg) {
+		font-size: v(50);
+		line-height: 1;
+	}
+	@include media($w-xl) {
+		font-size: v(80);
+	}
+}
+.top__link{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	width: v(80);
+	height: v(80);
+	background: var(--carrot-2);
+	border-radius: 50%;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	svg{
+		stroke: #fff;
+
+		width: v(17);
+		height: v(17);
+	}
+
+	@include media($w-lg) {
+		position: relative;
+		transform: none;
+		width: v(120);
+		height: v(120);
+		margin-top: v(50);
+	}
+	@include media($w-xl) {
+		width: v(160);
+		height: v(160);
+		margin-left: v(-34);
+		margin-top: v(75);
+	}
+}
+.top__img{
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: v(32);
+
+	@include media($w-md) {
+		flex: 0 0 45%;
+		max-width: 45%;
+		margin-top: 0;
+		padding: v(40) 0;
+	}
+	@include media($w-lg) {
+		padding: v(60) 0 v(40);
+	}
+	@include media($w-xl) {
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding: v(100) v(84) v(40);
+	}
+}
+.top__image{
+	position: relative;
+}
+.top__video{
+	video{
+		max-width: 100%;
+	}
+}

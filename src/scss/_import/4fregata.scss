@@ -1,0 +1,77 @@
+.section_fregat{
+
+}
+.fregat__cont{
+	background: var(--black-2);
+	border-radius: v(5);
+	color: #fff;
+	margin: 0 v(-16);
+	padding: v(120) v(32) 0;
+
+	@include media($w-md) {
+		margin: 0;
+		text-align: center;
+		padding: v(120) v(70) 0;
+	}
+
+	@include media($w-lg) {
+		padding: v(120) v(150) 0;
+	}
+	@include media($w-xl) {
+		padding: v(180) v(283) 0;
+	}
+}
+.fregat__title{
+	@extend %title_;
+
+	@include media($w-md) {
+		.line{
+			justify-content: center;
+		}
+	}
+}
+.fregat__text{
+	font-weight: 500;
+	letter-spacing: -0.03em;
+	margin: v(8) auto 0;
+
+	@include media($w-lg) {
+		font-size: v(22);
+		max-width: v(650);
+		margin-top: v(20);
+	}
+	@include media($w-xl) {
+		font-size: v(26);
+		max-width: v(734);
+	}
+}
+.fregat__img{
+	text-align: center;
+	margin-top: v(27);
+	margin-bottom: v(99);
+	img{
+		margin-bottom: v(-99);
+	}
+
+	@include media($w-md) {
+		margin-bottom: v(170);
+		img{
+			margin-bottom: v(-170);
+		}
+	}
+	@include media($w-lg) {
+		margin-top: v(80);
+		margin-bottom: v(234);
+		img{
+			margin-bottom: v(-234);
+		}
+	}
+}
+.fregat__btn{
+	text-align: center;
+	margin-top: v(36);
+
+	@include media($w-lg) {
+		margin-top: v(23);
+	}
+}
