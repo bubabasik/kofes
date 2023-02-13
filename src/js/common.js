@@ -154,7 +154,24 @@ $(function(){
 
 	$(document).on('click', '.mtabs__attr_more .btn', function(e){
 		e.preventDefault();
-		$(this).closest('.mtabs__attr').toggleClass('active');
+		var
+		$btn = $(this),
+		$mtabs = $btn.closest('.mtabs__attr'),
+		$hidden = $mtabs.find('.mtabs__attr_hidden'),
+		$text = $btn.find('.btn-text'),
+		$text_active = $btn.attr('data-active'),
+		$text_default = $btn.attr('data-default');
+
+		if($btn.hasClass('active')) {
+			$btn.removeClass('active');
+			$text.text($text_default).attr('data-text', $text_default);
+			$hidden.stop(true, true).slideUp();
+		}else{
+			$btn.addClass('active');
+			$text.text($text_active).attr('data-text', $text_active);
+			$hidden.stop(true, true).slideDown();
+		}
+
 	})
 
 	$(document).on('click', '.mtabs__head', function(e){
@@ -219,9 +236,41 @@ $(function(){
 		// $(this).text('Тест скопирован!');
 	});
 
+	$(document).on('click','.qty-change .qty__btn-plus', function(e){
+		e.preventDefault();
+		var
+		$input = $(this).closest('.qty').find('input'),
+		$new_val = parseInt($input.val()) + 1;
+		$input.val($new_val);
+		$input.trigger('change');
+
+	})
+	$(document).on('click','.qty-change .qty__btn-minus', function(e){
+		e.preventDefault();
+		var
+		$input = $(this).closest('.qty').find('input'),
+		$new_val = parseInt($input.val()) - 1;
+		$input.val($new_val);
+		$input.trigger('change');
+
+	})
+
+	$(document).on('change', '.qty-change .qty__input', function(){
+
+		var
+		$input = $(this),
+		$val = $(this).val(),
+		$min = $input.attr('data-min'),
+		$new_val = $min;
+		if(isNaN($val) || $val < $min){
+			$input.val($new_val);
+		}
+
+	});
+
 	if($('.card__slider').length) {
 		$('.card__slider').slick({
-			infinite: true,
+			infinite: false,
 			slidesToShow: 3,
 			slidesToScroll: 1,
 			dots: false,

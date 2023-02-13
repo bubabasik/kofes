@@ -95,6 +95,10 @@
 	font-size: v(16);
 	margin-top: v(6);
 
+	&-light{
+		font-weight: 400;
+	}
+
 	@include media($w-md) {
 		font-size: v(18);
 		margin-top: v(20);

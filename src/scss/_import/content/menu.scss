@@ -40,8 +40,6 @@
 .menu__list{
 	margin-top: v(88);
 }
-.menu__item{
-}
 
 
 .menu__item{
@@ -87,6 +85,12 @@
 
 	&:last-child{
 		border-bottom: 1px solid var(--line-gray);
+	}
+
+	&-all{
+		--link-color: var(--carrot-2);
+		--link-color-active: var(--link-color);
+		border-bottom: none!important;
 	}
 
 	&:hover{

@@ -103,7 +103,7 @@ body{
 	background: #fff;
 	transition: color var(--transition-time) var(--transition-func), background var(--transition-time) var(--transition-func);
 
-	&::-webkit-scrollbar { width: 0; }
+	// &::-webkit-scrollbar { width: 0; }
 
 
 	&.page{

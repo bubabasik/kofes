@@ -14,7 +14,7 @@
 	<!-- TOP -->
 	<section class="section_top">
 		<div class="container">
-			<a href="./category-rent.html" class="top__cont link" data-cursor-select>
+			<a href="./category-rent.html" class="top__cont link">
 				<picture>
 					<source srcset="./images/top-bg-mob.jpg" media="(max-width: 767px)" />
 					<img src="./images/top-bg.jpg" alt="" class="top__bg img-bg">
@@ -167,11 +167,14 @@
 						</span>
 					</a>
 
-					<a href="./catalog.html" class="modcat__item modcat__item-more">
-						<span class="modcat__item_btn">
-							Смотреть <br>весь каталог
+					<a href="./catalog.html" class="btn modcat__item modcat__item-more">
+						<span class="modcat__item_morebtn">
+							<span class="modcat__item_btn" data-splitting>
+								Смотреть <br>весь каталог
+							</span>
+							<svg class="ico modcat__item_icon"><use xlink:href="./img/sprite.svg#arr-right" /></svg>
 						</span>
-						<svg class="ico modcat__item_icon"><use xlink:href="./img/sprite.svg#arr-right" /></svg>
+						
 					</a>
 				</div>
 

@@ -16,14 +16,23 @@
 	}
 }
 .school__row{
-	border-top: 1px solid var(--line-on-black);
 	display: flex;
 	flex-flow: column;
 	padding-top: v(17);
 	padding-bottom: v(80);
+	position: relative;
+
+	.bt{
+		background: var(--line-on-black);
+		&-bottom{
+			display: none;
+		}
+	}
 
 	&:last-child{
-		border-bottom: 1px solid var(--line-on-black);
+		.bt-bottom{
+			display: inline-block;
+		}
 	}
 
 	@include media($w-md) {

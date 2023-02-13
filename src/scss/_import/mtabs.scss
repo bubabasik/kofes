@@ -173,13 +173,6 @@
 		.hidden{
 			display: none;
 		}
-		.mtabs__attr_more{
-			.btn{
-				&:after{
-					content: attr(data-default);
-				}
-			}
-		}
 	}
 
 	&_row{
@@ -190,6 +183,12 @@
 
 		&:first-child{
 			border-top: 1px solid var(--line-gray);
+		}
+	}
+	&_hidden{
+		display: none;
+		.mtabs__attr_row{
+			border-top: none;
 		}
 	}
 	&_capt{
@@ -207,9 +206,6 @@
 		margin-top: v(16);
 		.btn{
 			font-size: v(14);
-			&:after{
-				content: attr(data-active);
-			}
 		}
 	}
 

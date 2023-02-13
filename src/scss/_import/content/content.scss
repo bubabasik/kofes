@@ -272,7 +272,7 @@
 }
 
 [data-cursor-select] {
-	cursor: none;
+	cursor: pointer;
 }
 .cursor{
 	position: fixed;
@@ -294,10 +294,14 @@
 }
 
 .cursor-select{
-	width: v(120);
-	height: v(120);
+	width: v(90);
+	height: v(90);
 	background: var(--carrot-2);
-	mix-blend-mode: difference;
+	svg{
+		stroke: #fff;
+		width: v(17);
+		height: v(17);
+	}
 }
 
 .cursor-cat{
