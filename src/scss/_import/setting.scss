@@ -196,7 +196,7 @@ sup{
 	margin-left: 0.35em;
 	top: -0.45em;
 }
-a{
+a:not(.amim-magnetic){
 	transition: .2s;
 
 	&:focus{

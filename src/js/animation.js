@@ -1331,16 +1331,41 @@ function initMenuImage() {
 /* # MENU IMAGE */
 
 
+/* MAGNETIC BUTTON ГЛАВНАЯ - О КОМПАНИИ*/
+if($('.amim-magnetic').length) {
+	$(function () {
+		$('body').mouseleave(function(e){
+			gsap.to('.amim-magnetic', 0.5,{x: 0});
+		});
+		$('body').mousemove(function(e){   
+			callParallax(e);
+		});
+		function callParallax(e){
+			parallaxIt(e, '.amim-magnetic', 60);
+		}
+		function parallaxIt(e, target, movement){
+		var $this = $('body');
+		var relX = e.pageX - $this.offset().left;
+		gsap.to(target, 0.5, {
+			x: (relX - $this.width()/2) / ($this.width()) * movement,
+			ease: Power2.easeOut 
+		});
+		}
+	});
+}
+/* # MAGNETIC BUTTON ГЛАВНАЯ - О КОМПАНИИ */
+
+
 (function() { 
 	let isSafari = (function() { 
 		let ua = navigator.userAgent; 
 		if (/safari/gi.test(ua) && !/chrome/gi.test(ua)) return true; else return false; })(); 
 		if (!isSafari) { 
 			SmoothScroll ({ 
-				animationTime: 800, 
-				stepSize: 50, 
-				accelerationDelta: 150, 
-				accelerationMax: 10, 
+				animationTime: 1000, 
+				stepSize: 150, 
+				accelerationDelta: 30, 
+				accelerationMax: 2, 
 				keyboardSupport: true, 
 				arrowScroll: 50, 
 				pulseAlgorithm: true, 
