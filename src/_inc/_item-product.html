@@ -55,10 +55,11 @@
 		<span class="pr__price_weight">@@price.weight_num</span> }
 	</div>	}
 	@@if (options.status === true) {
-	<div class="pr__opt">
+	<div class="pr__opt @@if (options.more === false) {inactive}">
 		<div class="pr__opt_item pr__opt_default">
 
 			@@if (options.default === "without") {
+			<input type="hidden" name="option" value="от 16 000 р. - без покупки кофе" />
 			<div class="pr__opt_top">
 				<div class="pr__opt_val">от 16 000 р.</div>
 				@@if (options.more === true) {<div class="pr__opt_icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arr-down" /></svg></div>}
@@ -66,6 +67,7 @@
 			<div class="pr__opt_text">без покупки кофе</div> }	
 
 			@@if (options.default === "kg12") {
+			<input type="hidden" name="option" value="Бесплатная аренда - при покупке от 12кг кофе" />
 			<div class="pr__opt_top">
 				<div class="pr__opt_val">Бесплатная аренда</div>			
 				@@if (options.more === true) {<div class="pr__opt_icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arr-down" /></svg></div>}
@@ -73,6 +75,7 @@
 			<div class="pr__opt_text">при покупке от 12кг кофе</div> }	
 
 			@@if (options.default === "kg10") {
+			<input type="hidden" name="option" value="16 000 р. - при покупке от 10кг кофе" />
 			<div class="pr__opt_top">
 				<div class="pr__opt_val">16 000 р.</div>
 				@@if (options.more === true) {<div class="pr__opt_icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arr-down" /></svg></div>}
@@ -80,6 +83,7 @@
 			<div class="pr__opt_text">при покупке от 10кг кофе</div> }	
 
 			@@if (options.default === "kg8") {
+			<input type="hidden" name="option" value="24 000 р. - при покупке от 8кг кофе" />
 			<div class="pr__opt_top">
 				<div class="pr__opt_val">24 000 р.</div>
 				@@if (options.more === true) {<div class="pr__opt_icon"><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#arr-down" /></svg></div>}
@@ -87,32 +91,33 @@
 			<div class="pr__opt_text">при покупке от 8кг кофе</div> }	
 
 		</div>
+		@@if (options.more === true) {
 		<div class="pr__opt_more">
 
-			@@if (options.without === true) {	
-			<div class="pr__opt_item">
+			@@if (options.without === true || options.default === "without") {	
+			<div class="pr__opt_item @@if (options.default === 'without') {checked}" data-value="от 16 000 р. - без покупки кофе">
 				<div class="pr__opt_val">от 16 000 р.</div>
 				<div class="pr__opt_text">без покупки кофе</div>
 			</div> }
 
-			@@if (options.kg12 === true) {	
-			<div class="pr__opt_item">
+			@@if (options.kg12 === true || options.default === "kg12") {	
+			<div class="pr__opt_item @@if (options.default === 'kg12') {checked}" data-value="Бесплатная аренда - при покупке от 12кг кофе">
 				<div class="pr__opt_val">Бесплатная аренда</div>
 				<div class="pr__opt_text">при покупке от 12кг кофе</div>
 			</div> }
 
-			@@if (options.kg10 === true) {	
-			<div class="pr__opt_item">
+			@@if (options.kg10 === true || options.default === "kg10") {	
+			<div class="pr__opt_item @@if (options.default === 'kg10') {checked}" data-value="16 000 р. - при покупке от 10кг кофе">
 				<div class="pr__opt_val">16 000 р.</div>
 				<div class="pr__opt_text">при покупке от 10кг кофе</div>
 			</div> }
 
-			@@if (options.kg8 === true) {	
-			<div class="pr__opt_item">
+			@@if (options.kg8 === true || options.default === "kg8") {	
+			<div class="pr__opt_item @@if (options.default === 'kg8') {checked}" data-value="24 000 р. - при покупке от 8кг кофе">
 				<div class="pr__opt_val">24 000 р.</div>
 				<div class="pr__opt_text">при покупке от 8кг кофе</div>
 			</div> }
 
-		</div>
+		</div> }
 	</div> }
 </div>

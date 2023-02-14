@@ -68,6 +68,10 @@ $w-xxlg: $point-xxlg * 1px;
 	--container-padding: 16;
 
 	--l-column: 25%;
+	--z-top: 999;
+	--z-max: 999990;
+	--z-modal: 999995;
+
 
 	@include media($w-sm) {
   	// --fz: .20021vw;

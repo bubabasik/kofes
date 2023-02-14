@@ -376,3 +376,50 @@
 		}
 	}
 }
+
+
+.quest__cont{
+
+	@include media($w-xl) {
+		margin-top: v(37);
+	}
+}
+.quest__item{
+	padding-bottom: v(20);
+	margin-bottom: v(20);
+	border-bottom: 1px solid var(--line-gray);
+
+	&:last-child{
+		padding-bottom: 0;
+		border: none;
+	}
+
+	@include media($w-lg) {
+		padding-bottom: v(30);
+		margin-bottom: v(30);
+	}
+}
+.quest__name{
+	margin-bottom: v(10);
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	font-size: v(20);
+	font-weight: 400;
+
+	@include media($w-md) {
+		font-size: v(28);
+	}
+	@include media($w-lg) {
+		font-size: v(36);
+	}
+	@include media($w-xl) {
+		font-size: v(42);
+	}
+}
+.quest__text{
+	& > *{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}

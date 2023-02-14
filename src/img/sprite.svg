@@ -8,6 +8,7 @@
   <symbol id="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 61" >
     <path fill-rule="evenodd" clip-rule="evenodd" d="M24.9337 0.0280762V49.5573L0.318733 24.9424V32.6781L27.6687 60.0281L31.5365 56.1602L31.5347 56.1584L55.0186 32.6746V24.9389L30.4037 49.5538V0.0280762L24.9337 0.0280762Z"></path>
   </symbol>
+  <symbol id="arrow-top" viewBox="0 0 16 18" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.789 17.654V3.257l7.1 7.1V8.235L7.998.346 6.94 1.407.111 8.237v2.12L7.29 3.18v14.474h1.5Z" /></symbol>
   <symbol id="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12" >
     <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9023 5.74978L3.01342 5.74978L7.92799 0.835208H6.38349L0.922852 6.29584L1.6951 7.06809L1.69547 7.06772L6.38422 11.7565H7.92872L3.01416 6.84191L12.9023 6.84191V5.74978Z" ></path>
   </symbol>

@@ -271,6 +271,42 @@
 	}
 }
 
+.toTop{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	vertical-align: top;
+	position: fixed;
+	left: v(16);
+	bottom: v(40);
+	width: v(50);
+	height: v(50);
+	border-radius: 50%;
+	background: var(--carrot-2);
+	z-index: var(--z-top);
+	padding: 0;
+	border: none;
+	cursor: pointer;
+
+	svg{
+		fill: #fff;
+		width: v(16);
+		height: v(18);
+	}
+
+	@include media($w-xl) {
+		width: v(80);
+		height: v(80);
+		left: v(80);
+		bottom: v(80);
+
+		svg{
+			width: v(23);
+			height: v(25);
+		}
+	}
+}
+
 [data-cursor-select] {
 	cursor: pointer;
 }
@@ -485,6 +521,24 @@
 	&-bottom{
 		top: auto;
 		bottom: 0;
+	}
+}
+
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: var(--z-max);
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s var(--ease-out);
+	background: rgba(0, 0, 0, 0.04);
+
+	&.active{
+		opacity: 1;
+		visibility: visible;
 	}
 }
 

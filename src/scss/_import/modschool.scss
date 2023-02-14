@@ -28,6 +28,14 @@
 	letter-spacing: -0.03em;
 	min-height: v(420);
 	position: relative;
+	video{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -2;
+	}
 	&_inner{
 		flex-flow: column;
 		display: none;
@@ -35,6 +43,7 @@
 	&_btn{
 		text-align: center;
 		position: relative;
+		transition: .3s var(--ease-out);
 		&:before{
 			content: '';
 			display: inline-block;
@@ -86,6 +95,20 @@
 
 	.img-bg{
 		will-change: transform;
+
+		transition: opacity .3s var(--ease-out), visibility .3s var(--ease-out);
+	}
+	&.active{
+		.img-bg{
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+	&.playing{
+		.modschool__video_btn{
+			opacity: 0;
+		}
 	}
 
 	@include media($w-md) {

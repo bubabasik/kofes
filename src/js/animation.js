@@ -90,6 +90,23 @@ $(function(){
 		})
 	} 
 
+	$(function(){
+		const toTopAnim = gsap.from('.toTop', {
+			yPercent: 200,
+			paused: true,
+			ease: "easeOut",
+			duration: 0.3,
+		}).progress(1);
+		ScrollTrigger.create({
+			start: "top bottom",
+			end: 99999,
+			onUpdate: (self) => {
+				(self.direction === -1 && $(window).scrollTop() > 100) ? toTopAnim.play() : toTopAnim.reverse();
+			}
+		});
+	})
+	
+
 	/* MAIN TOP */
 	if($('.section_top').length) {
 		$(function(){
@@ -994,11 +1011,6 @@ $(function(){
 					toggleActions: "play none none none",
 				}
 			})
-			.from(bg, {
-				transform: 'scale(1.36)',
-				duration: 1.6, 
-				ease: Power2.easeOut 
-			})
 			.to(banner, {
 				webkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
 				clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
@@ -1018,6 +1030,19 @@ $(function(){
 				delay: .5
 			}, 0)
 
+			const tl2 = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".modschool__cont",
+					start: "top bottom-=25%",
+					end: "bottom bottom-=25%",
+					scrub: true
+				}
+			})
+			.from(bg, {
+				transform: 'scale(1.36)',
+				duration: 1.6, 
+				ease: Power2.easeOut 
+			})
 
 		});
 	}

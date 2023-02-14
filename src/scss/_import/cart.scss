@@ -83,8 +83,8 @@
 }
 .cart__opt{
 	font-size: v(14);
-	margin-top: v(4);
-	padding-top: 0;
+	margin-top: v(-4);
+	// padding-top: 0;
 	position: relative;
 	z-index: 5;
 
@@ -96,13 +96,16 @@
 	}
 
 	@include media($w-lg) {
-		margin-top: v(20);
 		font-size: v(16);
+		margin-top: 0;
 	}
 	@include media($w-xl) {
 		.pr__opt{
 			&_item{
 				font-size: v(20);
+			}
+			&_val{
+				padding: 0 v(20);
 			}
 		}
 	}
