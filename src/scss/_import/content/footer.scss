@@ -146,6 +146,9 @@
 	}
 	@include media($w-lg) {
 		font-size: v(22);
+		.link{
+			padding-bottom: v(3);
+		}
 	}
 	@include media($w-xl) {
 		font-size: v(26);
@@ -159,6 +162,9 @@
 	padding-left: v(4);
 	li{
 		margin-bottom: v(8);
+	}
+	.link{
+		background-position: 0 calc(100% - 5 * var(--fz));
 	}
 
 	@include media($w-md) {
@@ -225,8 +231,8 @@
 	}
 }
 .foot__phone{
-	--link-color: var(--carrot-2);
-	--link-color-active: var(--link-color);
+	--link-color: var(--carrot);
+	--link-color-active: var(--carrot-2);
 	--link-padding: 0;
 	font-size: v(32);
 	line-height: 1.1;
@@ -331,12 +337,16 @@
 .dev__item{
 	display: inline-block;
 	vertical-align: top;
+	transition: .4s var(--ease-out);
 	img{
 		width: v(71);
 		height: v(37);
 	}
 
 	@include media($w-lg) {
+		&:hover{
+			opacity: 0.65;
+		}
 		img{
 			width: v(88);
 			height: v(46);

@@ -378,31 +378,14 @@
 		display: none;
 		position: relative;
 		overflow: hidden;
-		// padding-top: v(10);
-		// border-radius: 0 0 v(5) v(5);
-		// transition: .5s var(--ease);
-		// max-height: 0;
 		.pr__opt{
 			&_item{
 				background: #fff;
 				border-top: 1px solid var(--line-gray);
-				// padding: v(20);
 			}
 		}
 	}
 
-	&:hover{
-		/*.pr__opt{
-			&_icon{
-				svg{
-					transform: scaleY(-1);
-				}
-			}
-			&_more{
-				display: inline-block;
-			}
-		}*/
-	}
 
 
 
@@ -416,6 +399,7 @@
 		opacity: 0;
 		visibility: hidden;
 		transition: .3s var(--ease-out);
+		display: none;
 
 		&.active{
 			opacity: 1;

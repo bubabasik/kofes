@@ -156,6 +156,7 @@
 		fill: var(--line-gray);
 		width: v(14);
 		height: v(14);
+		transition: .3s var(--ease-out)
 	}
 
 	@include media($w-lg) {
@@ -163,6 +164,12 @@
 		svg{
 			width: v(18);
 			height: v(18);
+		}
+
+		&:hover{
+			svg{
+				fill: var(--black-2);
+			}
 		}
 	}
 }

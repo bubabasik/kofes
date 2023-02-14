@@ -70,7 +70,30 @@ $(function(){
 		initCatalogImage();
 	}
 
+	
+	const mmenuEl = gsap.utils.toArray(['.mmenu__logo', '.mmenu__cont .modal__close', '.mmenu__list > li', '.mmenu__cart', '.mmenu__contact_phone', '.mmenu__contact_email']);
 
+	mmenuHide = () => {
+		gsap.set(mmenuEl, {opacity: 0});
+	}
+	mmenuAnim = () => {
+		const mmenuLogo = document.querySelector('.mmenu__logo');
+		const mmenuClose = document.querySelector('.modal__close');
+
+
+		const tl = gsap.timeline();
+
+		mmenuEl.forEach((el, index) => {
+			tl
+			.to(el, {
+				opacity: 1,
+				duration: .6,
+				ease: 'cubic-bezier(0,0,.15,1)'
+			}, index == 0 ? .5 : '-=.55')
+			// index == 0 ? .5 : '-=.5'
+		})
+	}
+	mmenuHide();
 
 
 	headerAnim = function() {
@@ -91,7 +114,11 @@ $(function(){
 	} 
 
 	$(function(){
-		const toTopAnim = gsap.from('.toTop', {
+		let toTop = document.querySelector('.toTop');
+		setTimeout(function(){
+			gsap.set(toTop, {opacity: 1});
+		}, 300)
+		const toTopAnim = gsap.from(toTop, {
 			yPercent: 200,
 			paused: true,
 			ease: "easeOut",
@@ -956,7 +983,7 @@ $(function(){
 
 
 			/* items */
-			const items = gsap.utils.toArray(".modcat__item")
+			const items = gsap.utils.toArray(".modcat__item:not(.modcat__item-title)")
 			const mainTimeline = gsap.timeline();
 
 			gsap.set(items, {clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"});

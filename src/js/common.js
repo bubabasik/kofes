@@ -111,7 +111,7 @@ $(function(){
 		$('.marquee').each(function(key, item){
 			var 
 			$clone = $(item).html();
-			$(item).html($clone + $clone + $clone);
+			$(item).html($clone + $clone + $clone + $clone);
 		})
 	}
 
@@ -136,7 +136,36 @@ $(function(){
 
 	$(document).on('click', '.mmenu__btn', function(e){
 		e.preventDefault();
-		showModal($('#modal-menu-mobile'), 'fancy-mmenu');
+
+		$.fancybox.open({
+			src  : '#modal-menu-mobile',
+			type : 'inline',
+			opts : {
+				closeExisting: true,
+				baseClass: 'fancy-mmenu',
+				animationEffect: false,
+				animationDuration: 600,
+				transitionEffect: false,
+				transitionDuration: 600,
+				touch: false,
+				btnTpl: {
+					close: '',
+					smallBtn: '',
+				},
+				afterShow : function( instance, current ) {
+					$(current.src).addClass('active');
+					mmenuAnim();
+				},
+				beforeClose : function( instance, current ) {
+					this.opts.animationEffect = true;
+					this.opts.transitionEffect = true;
+					$(current.src).removeClass('active');
+				},
+				afterClose : function( instance, current ) {
+					mmenuHide();
+				}
+			}
+		});
 	})
 
 	$(document).on('click', '.mmenu__more', function(e){
@@ -202,13 +231,12 @@ $(function(){
 
 		playVideo.addEventListener("click", (e) => {
 			e.preventDefault();
-			if(video.paused) {
-				video.play();
-				playVideo.classList.add("playing");
-			}else{
-				video.pause();
-				playVideo.classList.remove("playing");
-			}
+			let pause = playVideo.classList.contains('active') ? 0 : 300;
+			video.paused ? playVideo.classList.add("playing") : playVideo.classList.remove("playing");
+			setTimeout(() => {
+				video.paused ? video.play() : video.pause();
+			}, pause)
+			
 			playVideo.classList.add("active");
 		}, false);
 	}
@@ -225,7 +253,7 @@ $(function(){
 		scrollTo(target);
 		return false;
 	});
-	
+
 	$(document).on('click', '.toTop', function(){
 		$('html, body').animate({scrollTop: 0}, 800);
 	})
@@ -262,7 +290,9 @@ $(function(){
 			'left'	: $list.offset().left
 		});
 		$('body').append($copy);
-		$copy.addClass('active');
+		$copy
+		.addClass('active')
+		.stop(true, true).slideDown(300);
 
 		$copy.find('.pr__opt_default').on('click', hideModals);
 

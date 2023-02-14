@@ -81,6 +81,7 @@
 			will-change: transform;
 		}
 
+
 		svg{
 			fill: var(--carrot-2);
 			width: v(16);
@@ -96,7 +97,7 @@
 	.img-bg{
 		will-change: transform;
 
-		transition: opacity .3s var(--ease-out), visibility .3s var(--ease-out);
+		transition: opacity .6s var(--ease-out), visibility .6s var(--ease-out);
 	}
 	&.active{
 		.img-bg{
@@ -134,18 +135,15 @@
 		
 		padding-bottom: v(100);
 		font-size: v(36);
-		&:hover{
-			.modschool__video{
-				&_play{
-					&:before{
-						transform: scale(1.15);
-					}
-				}
-			}
-		}
 		&_play{
 			width: v(120);
 			height: v(120);
+
+			&:hover{
+					&:before{
+						transform: scale(1.15);
+					}
+			}
 		}
 		&_text{
 			max-width: v(550);
@@ -181,6 +179,7 @@
 	}
 	&_link{
 		--link-color: #fff;
+		--link-color-active: #fff;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;

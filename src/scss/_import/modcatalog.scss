@@ -92,12 +92,14 @@
 		width: 100%;
 	}
 	&_name{
+		.word{
+			color: transparent;
+		}
 	}
 	.word{
 		display: inline-flex;
 		overflow: hidden;
 		position: relative;
-		color: transparent;
 		&:before,
 		&:after{
 			content: attr(data-word);
@@ -121,26 +123,12 @@
 			opacity: 0;
 		}
 	}
-	/*.char{
-			display: inline-block;
-			position: relative;
-			transition: .45s var(--ease-out);
-			&:before,
-			&:after{
-				content: attr(data-char);
-				position: absolute;
-				left: 0;
-			}
-			&:before{
-				bottom: 100%;
-			}
-			&:after{
-				top: 100%;
-			}
-	}*/
 	&_btn{
 		text-align: left;
 		font-weight: 400;
+		.word{
+			color: transparent;
+		}
 	}
 	&_icon{
 		fill: currentColor;
@@ -166,12 +154,6 @@
 				animation: link-from-bottom var(--link-time) var(--ease-out) 1;
 			}
 		}
-		/*.char{
-				transform: translateY(100%);
-				&:nth-of-type(odd) {
-					transform: translateY(-100%);
-				}
-		}*/
 	}
 
 	@include media($w-md) {

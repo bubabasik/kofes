@@ -236,7 +236,8 @@
 .mmenu__contact{
 	display: flex;
 	flex-flow: column;
-	padding-top: v(60);
+	// padding-top: v(60);
+	padding-top: 30px;
 	margin-top: auto;
 	&_phone{
 		--link-color: var(--carrot);

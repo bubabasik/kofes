@@ -2,6 +2,12 @@
 	padding-top: v(57);
 	margin-bottom: v(16);
 
+	&-category{
+		.ptop__text{
+			font-weight: 400;
+		}
+	}
+
 	@include media-max($w-md) {
 		.title{
 			font-size: v(32);

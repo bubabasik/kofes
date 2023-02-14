@@ -213,6 +213,25 @@
 		height: v(22);
 		fill: currentColor;
 	}
+	&__icon{
+		display: inline-flex;
+		position: relative;
+		svg{
+			transition: var(--link-time) var(--ease-out);
+			will-change: transform;
+			transform-origin: 50% 50% 0.5em;
+			&:nth-child(1) {
+				animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+			}
+			&:nth-child(2) {
+				position: absolute;
+				animation: link-to-top var(--link-time) var(--ease-out) 1;
+				opacity: 0;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
 	&__link{
 		display: inline-block;
 		vertical-align: top;
@@ -226,6 +245,21 @@
 		color: var(--carrot-2);
 		top: v(-13);
 		right: 0;
+	}
+
+	&:hover{
+		.hcart__icon{
+			svg{
+				&:nth-child(1){
+					opacity: 0;
+					animation: link-to-top var(--link-time) var(--ease-out) 1;
+				}
+				&:nth-child(2){
+					opacity: 1;
+					animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+				}
+			}
+		}
 	}
 
 	@include media($w-md) {

@@ -148,7 +148,7 @@
 			padding-left: calc(42.8% + #{v(8)});
 		}
 		.text{
-			font-weight: 500;
+			// font-weight: 500;
 			letter-spacing: -0.03em;
 			.checklist{
 				margin-top: v(80);
@@ -165,7 +165,7 @@
 }
 
 .mtabs__attr{
-	font-weight: 500;
+	font-weight: 400;
 	font-size: v(14);
 	color: #000;
 
@@ -287,7 +287,7 @@
 	}
 	&__text{
 		letter-spacing: -0.03em;
-		font-weight: 500;
+		font-weight: 400;
 		padding: v(16) v(16) 0;
 		color: #fff;
 		margin-bottom: v(7);
