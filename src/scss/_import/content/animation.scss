@@ -23,3 +23,11 @@
 		}
 	}
 }
+
+a.top__cont.link{
+	cursor: none !important;
+ }
+.top__link {
+    pointer-events: none;
+    z-index: 9;
+}

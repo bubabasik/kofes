@@ -1331,6 +1331,44 @@ function initMenuImage() {
 /* # MENU IMAGE */
 
 
+/* MAGNETIC BUTTON ГЛАВНАЯ - ПЕРВЫЙ ЭКРАН*/
+var windowWidth = $(window).width();
+if((windowWidth > 1200) & ($('a.top__cont.link').length)){
+	var mArea = document.querySelector('a.top__cont.link');
+	function parallaxIt(e, target, movement = 1){
+	  var boundingRect = mArea.getBoundingClientRect();
+	  var relX = e.pageX - boundingRect.left;
+	  var relY = e.pageY - boundingRect.top;
+	  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+	
+	  gsap.to(target, {
+		x: (relX - boundingRect.width / 3.4),
+		y: (relY - boundingRect.height / 1.2 - scrollTop),
+		ease: "power1",
+		duration: 0.6
+	  });
+	}
+	
+	function callParallax(e){
+	  parallaxIt(e, '.top__link');
+	}
+		
+	mArea.addEventListener('mousemove', function(e){
+	  callParallax(e);
+	});
+	
+	mArea.addEventListener('mouseleave', function(e){
+	  gsap.to('.top__link', {
+		scale:1,
+		x: 0,
+		y: 0,
+		ease: "power3",
+		duration: 0.6
+	  });
+	});
+}
+/* # MAGNETIC BUTTON ГЛАВНАЯ - ПЕРВЫЙ ЭКРАН */
+
 /* MAGNETIC BUTTON ГЛАВНАЯ - О КОМПАНИИ*/
 if($('.amim-magnetic').length) {
 	$(function () {
