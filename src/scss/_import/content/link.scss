@@ -23,11 +23,11 @@
 	text-decoration: none !important;
 	color: var(--link-color);
 
-	&:focus{
+	&:focus,
+	&:active{
 		color: var(--link-color);
 	}
-	&:hover,
-	&:active{
+	&:hover{
 		color: var(--link-color-active);
 	}
 
