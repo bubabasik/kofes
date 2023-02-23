@@ -24,10 +24,46 @@
 	}
 }
 
-a.top__cont.link{
+a.top__cont.link, .section_top .container, a.top__cont.link{
 	cursor: none !important;
  }
-.top__link {
+.top__link{
     pointer-events: none;
     z-index: 9;
+}
+span.top__link{
+    pointer-events: none;
+    z-index: 9;
+}
+.cursor-cat .draw-arrow{
+    stroke: var(--carrot-2);
+}
+.cursor-cat.dark-item .draw-arrow{
+    stroke: #fff;
+}
+#arrow-anim-svg .draw-arrow{
+    stroke-width: 2.7;
+    fill: none;
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	-webkit-animation-duration: 4s;
+		animation-duration: 4s;
+	-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+	-webkit-animation-name: draw;
+		animation-name: draw;
+}
+svg .draw-arrow.tail-1, svg .draw-arrow.tail-2{
+	-webkit-animation-delay: 0.3s;
+		animation-delay: 0.3s;
+}
+@-webkit-keyframes draw{
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes draw{
+	to {
+		stroke-dashoffset: 0;
+	}
 }

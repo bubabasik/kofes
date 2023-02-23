@@ -1148,9 +1148,11 @@ $(function(){
 
 		$('.cursor-cat-item').on('mouseenter', function() {
 			cursorImage.addClass('active ' + ($(this).hasClass('dark-item') ? 'dark-item' : ''));
+			$("#arrow-anim-svg path").addClass('draw-arrow');
 		});
 		$('.cursor-cat-item').on('mouseleave', function() {
 			cursorImage.removeClass('active dark-item');
+			$("#arrow-anim-svg path").removeClass('draw-arrow');
 		});
 
 
