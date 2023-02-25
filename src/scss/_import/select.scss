@@ -55,7 +55,6 @@
 			margin: v(18) v(40) 0;
 		}
 		.select__plus{
-			transform: translateX(-50%);
 			bottom: v(20);
 		}
 	}
@@ -101,7 +100,13 @@
 	}
 
 
-
+	@include media-max($w-lg) {
+		&-topcat{
+			.select__plus{
+				margin-bottom: 0;
+			}
+		}
+	}
 	@include media-max($w-md) {
 		&-topcat{
 			.title{
@@ -158,16 +163,6 @@
 	}
 	@include media($w-lg) {
 
-		&:hover{
-			.select__plus{
-				width: v(100);
-				height: v(100);
-				&-text{
-					width: v(120);
-					height: v(120);
-				}
-			}
-		}
 
 		&-present{
 			.title{
@@ -210,23 +205,12 @@
 			}
 			.select__plus{
 				bottom: 0;
-				transform: translate(50%, 50%);
 			}
 		}
 	}
 	@include media($w-xl) {
 
 
-		&:hover{
-			.select__plus{
-				width: v(160);
-				height: v(160);
-				&-text{
-					width: v(200);
-					height: v(200);
-				}
-			}
-		}
 
 		&-border{
 			margin-top: v(40);
@@ -277,7 +261,7 @@
 				padding: 0;
 			}
 			.select__plus{
-				right: 18.2%;
+				right: 28.8%;
 			}
 		}
 		&-degustation{
@@ -424,27 +408,44 @@
 	}
 }
 .select__plus{
+	--size: 80;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	vertical-align: top;
 	position: absolute;
-	width: v(80);
-	height: v(80);
-	background: var(--carrot-2);
-	border-radius: 50%;
+	width: calc(var(--size) * var(--fz));
+	height: calc(var(--size) * var(--fz));
 	bottom: 0;
 	left: 50%;
-	transform: translate(-50%, 50%);
+	margin: 0 0 calc( -0.5 * var(--size) * var(--fz)) calc( -0.5 * var(--size) * var(--fz));
 	font-weight: 500;
 	color: #fff;
 	font-size: v(14);
 	will-change: transform;
+	background: transparent;
+
+	&:before{
+		content: '';
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--carrot-2);
+		border-radius: 50%;
+		z-index: -1;
+		transition: .3s var(--ease-out);
+	}
 
 
 	&-light{
-		background: #fff;
 		color: var(--carrot-2);
+		&:before{
+			background: #fff;
+		}
 	}
 	svg{
 		stroke: currentColor;
@@ -454,23 +455,39 @@
 	}
 
 	&-text{
-		width: v(100);
-		height: v(100);
+		--size: 100;
 	}
 
 	@include media($w-lg) {
 		left: auto;
-		transform: translate(50%, 50%);
 		right: 23.5%;
 		transition: .4s var(--ease-out);
+		margin: 0 calc( -0.5 * var(--size) * var(--fz)) calc( -0.5 * var(--size) * var(--fz)) 0;
+
+		&:hover{
+			&:before{
+				top: v(-10);
+				right: v(-10);
+				bottom: v(-10);
+				left: v(-10);
+			}
+		}
 	}
 	@include media($w-xl) {
-		width: v(120);
-		height: v(120);
+		--size: 120;
 		font-size: v(20);
 		&-text{
-			width: v(180);
-			height: v(180);
+			--size: 180;
+		}
+
+
+		&:hover{
+			&:before{
+				top: v(-20);
+				right: v(-20);
+				bottom: v(-20);
+				left: v(-20);
+			}
 		}
 	}
 }

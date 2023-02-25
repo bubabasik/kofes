@@ -276,6 +276,7 @@
 }
 
 .toTop{
+	--link-time: .8s;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
@@ -292,11 +293,41 @@
 	border: none;
 	cursor: pointer;
 	opacity: 0;
+	will-change: transform;
 
 	svg{
 		fill: #fff;
 		width: v(16);
 		height: v(18);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: v(-9) 0 0 v(-8);
+		will-change: transform;
+		transform-origin: 50% 50% 0.5em;
+		transition: var(--link-time) var(--ease-out);
+
+		&:first-child{
+			animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+		}
+		&:last-child{
+			animation: link-to-top var(--link-time) var(--ease-out) 1;
+			opacity: 0;
+		}
+
+	}
+
+	&:hover{
+		svg{
+			&:first-child{
+				animation: link-to-top var(--link-time) var(--ease-out) 1;
+				opacity: 0;
+			}
+			&:last-child{
+				animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+				opacity: 1;
+			}
+		}
 	}
 
 	@include media($w-xl) {
@@ -308,6 +339,7 @@
 		svg{
 			width: v(23);
 			height: v(25);
+			margin: v(-12.5) 0 0 v(-11.5);
 		}
 	}
 }

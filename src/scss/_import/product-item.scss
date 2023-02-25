@@ -107,19 +107,6 @@
 		}
 	}
 
-
-	@include media($w-lg) {
-		font-size: v(20);
-		top: v(20);
-		right: v(29);
-		left: v(19);
-		svg{
-			width: v(33);
-			height: v(33);
-			min-width: v(33);
-			margin-right: v(10);
-		}
-
 		&:hover{
 			.pr__gift{
 				&_data{
@@ -134,6 +121,19 @@
 				}
 			}
 		}
+
+	@include media($w-lg) {
+		font-size: v(20);
+		top: v(20);
+		right: v(29);
+		left: v(19);
+		svg{
+			width: v(33);
+			height: v(33);
+			min-width: v(33);
+			margin-right: v(10);
+		}
+
 	}
 }
 .pr__roast{

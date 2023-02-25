@@ -143,6 +143,10 @@
 		transform: none;
 	}
 
+	.fancybox-button-small{
+		display: none;
+	}
+
 	@include media($w-md) {
 		max-width: 60%;
 		padding: v(60) v(45) v(100);

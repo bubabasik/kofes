@@ -95,6 +95,28 @@ $(function(){
 	}
 	mmenuHide();
 
+	modalClose = () => {
+		const els = gsap.utils.toArray('.modal-anim');
+		gsap.set(els, {opacity: 0})
+	}
+	modalClose();
+	
+	modalAnim = (src) => {
+		const els = gsap.utils.toArray(src + ' .modal-anim');
+		gsap.set(els, {opacity: 0});
+
+		const tl = gsap.timeline();
+
+		els.forEach((el, index) => {
+			tl
+			.to(el, {
+				opacity: 1,
+				duration: .6,
+				ease: 'cubic-bezier(0,0,.15,1)'
+			}, index == 0 ? .5 : '-=.55')
+		})
+	}
+
 
 	headerAnim = function() {
 		const elements = gsap.utils.toArray(['.logo', $(".hmenu a:visible").length ? $(".hmenu a:visible") : '.hmenu', '.hphone', '.hcart', '.head__mmenu']);
@@ -408,7 +430,13 @@ $(function(){
 	/* UTP cifres */
 	if($('.utp__cifres').length) {
 		$(function(){
-			const items = gsap.utils.toArray(".utp__cifres_item")
+			let items;
+			console.log(windowWidth);
+			if(windowWidth >= 992) {
+				items = gsap.utils.toArray(".utp__cifres_item")
+			}else{
+				items = gsap.utils.toArray([".utp__cifres_item.order-1", ".utp__cifres_item.order-2", ".utp__cifres_item.order-3"])
+			}
 			const mainTimeline = gsap.timeline();
 			let pause = 0;
 
@@ -1338,35 +1366,35 @@ var windowWidth = $(window).width();
 if((windowWidth > 1200) & ($('a.top__cont.link').length)){
 	var mArea = document.querySelector('a.top__cont.link');
 	function parallaxIt(e, target, movement = 1){
-	  var boundingRect = mArea.getBoundingClientRect();
-	  var relX = e.pageX - boundingRect.left;
-	  var relY = e.pageY - boundingRect.top;
-	  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	
-	  gsap.to(target, {
-		x: (relX - boundingRect.width / 3.4),
-		y: (relY - boundingRect.height / 1.2 - scrollTop),
-		ease: "power1",
-		duration: 0.6
-	  });
+		var boundingRect = mArea.getBoundingClientRect();
+		var relX = e.pageX - boundingRect.left;
+		var relY = e.pageY - boundingRect.top;
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		gsap.to(target, {
+			x: (relX - boundingRect.width / 3.4),
+			y: (relY - boundingRect.height / 1.2 - scrollTop),
+			ease: "power1",
+			duration: 0.6
+		});
 	}
 	
 	function callParallax(e){
-	  parallaxIt(e, '.top__link');
+		parallaxIt(e, '.top__link');
 	}
-		
+
 	mArea.addEventListener('mousemove', function(e){
-	  callParallax(e);
+		callParallax(e);
 	});
 	
 	mArea.addEventListener('mouseleave', function(e){
-	  gsap.to('.top__link', {
-		scale:1,
-		x: 0,
-		y: 0,
-		ease: "power3",
-		duration: 0.6
-	  });
+		gsap.to('.top__link', {
+			scale:1,
+			x: 0,
+			y: 0,
+			ease: "power3",
+			duration: 0.6
+		});
 	});
 }
 /* # MAGNETIC BUTTON ГЛАВНАЯ - ПЕРВЫЙ ЭКРАН */
@@ -1384,12 +1412,12 @@ if($('.amim-magnetic').length) {
 			parallaxIt(e, '.amim-magnetic', 60);
 		}
 		function parallaxIt(e, target, movement){
-		var $this = $('body');
-		var relX = e.pageX - $this.offset().left;
-		gsap.to(target, 0.5, {
-			x: (relX - $this.width()/2) / ($this.width()) * movement,
-			ease: Power2.easeOut 
-		});
+			var $this = $('body');
+			var relX = e.pageX - $this.offset().left;
+			gsap.to(target, 0.5, {
+				x: (relX - $this.width()/2) / ($this.width()) * movement,
+				ease: Power2.easeOut 
+			});
 		}
 	});
 }

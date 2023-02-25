@@ -74,7 +74,7 @@
 }
 .mtabs__name{
 	text-transform: uppercase;
-	font-size: v(22);
+	font-size: v(28);
 	line-height: 1.1;
 	letter-spacing: -0.03em;
 
@@ -101,6 +101,7 @@
 	position: relative;
 	width: v(21);
 	height: v(21);
+	min-width: v(21);
 	margin-left: v(20);
 
 	&:before,
@@ -127,6 +128,7 @@
 	@include media($w-lg) {
 		width: v(29);
 		height: v(29);
+		min-width: v(29);
 	}
 }
 .mtabs__content{

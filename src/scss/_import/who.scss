@@ -110,6 +110,7 @@
 
 	clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0);
 	transition: .8s var(--ease-out);
+	will-change: clip-path;
 
 	@for $i from 0 through 10 {
 		&:nth-child(#{$i}) {
@@ -152,6 +153,7 @@
 	letter-spacing: 0.05em;
 	flex: 0 0 v(52);
 	max-width: v(52);
+	will-change: opacity;
 	// opacity: 0;
 	// transition: .4s var(--ease-out);
 	// transition-delay: .4s;
@@ -173,6 +175,7 @@
 	letter-spacing: -0.03em;
 	color: #000;
 	font-weight: 400;
+	will-change: opacity;
 	// opacity: 0;
 	// transition: .4s var(--ease-out);
 	// transition-delay: .4s;

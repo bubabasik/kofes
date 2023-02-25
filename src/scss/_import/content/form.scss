@@ -40,7 +40,7 @@
 	border: none;
 	background: transparent;
 	color: var(--color-main);
-	font-size: v(14);
+	font-size: v(16);
 	position: relative;
 	z-index: 2;
 	cursor: pointer;
@@ -112,6 +112,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	font-size: v(16);
+	pointer-events: none;
 
 	@include media($w-lg) {
 		font-size: v(20);

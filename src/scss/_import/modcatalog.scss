@@ -63,6 +63,7 @@
 	margin: 0 calc(var(--margin) * var(--fz)) v(8);
 	padding: v(16);
 	min-height: v(348);
+	will-change: clip-path;
 
 	&.dark-item{
 		--color: #fff;
@@ -110,16 +111,16 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			transition: var(--link-time) var(--ease-out);
+			transition: 0s var(--ease-out);
 			will-change: transform;
 			transform-origin: 50% 50% 0.5em;
 			color: var(--color);
 		}
 		&:before{
-			animation: link-from-bottom var(--link-time) var(--ease-out) 1;
+			animation: link-from-bottom 0s var(--ease-out) 1;
 		}
 		&:after{
-			animation: link-to-top var(--link-time) var(--ease-out) 1;
+			animation: link-to-top 0s var(--ease-out) 1;
 			opacity: 0;
 		}
 	}
@@ -145,6 +146,10 @@
 
 	&:hover{
 		.word{
+			&:before,
+			&:after{
+				transition: var(--link-time) var(--ease-out);
+			}
 			&:before{
 				opacity: 0;
 				animation: link-to-top var(--link-time) var(--ease-out) 1;

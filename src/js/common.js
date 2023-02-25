@@ -65,23 +65,23 @@ showModal = function($href, $class=""){
 			transitionDuration: 600,
 			touch: false,
 			btnTpl: {
-				close: '<button class="modal__close" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close-circle" /></svg></button>',
-				smallBtn: '<button class="modal__close" data-fancybox-close><svg class="ico ico-center"><use xlink:href="./img/sprite.svg#close-circle" /></svg></button>',
+				close: '',
+				smallBtn: '',
 			},
 			afterShow : function( instance, current ) {
 				$(current.src).addClass('active');
+				modalAnim(current.src);
 			},
 			beforeClose : function( instance, current ) {
 				this.opts.animationEffect = true;
 				this.opts.transitionEffect = true;
 				$(current.src).removeClass('active');
-				// console.log(current.src)
 			},
 			afterClose : function( instance, current ) {
-					// $('#modal_menu').removeClass('active mmenu__vis');
-				}
+				modalClose();
 			}
-		});
+		}
+	});
 }
 
 // Товар в корзине
