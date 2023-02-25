@@ -1423,6 +1423,29 @@ if($('.amim-magnetic').length) {
 }
 /* # MAGNETIC BUTTON ГЛАВНАЯ - О КОМПАНИИ */
 
+/* MAGNETIC BUTTON Заказать и + */
+if($('.select__cont').length) {
+    $(function() {
+    	$('.select__cont').mouseleave(function(e){
+    		gsap.to('.select__plus', 0.3,{ x: 0});
+    	});
+    	$('.select__cont').mousemove(function(e){   
+    		callParallax(e);
+    	});
+    	function callParallax(e){
+    		parallaxIt(e, '.select__plus', 70);
+    	}
+    	function parallaxIt(e, target, movement){
+    	var $this = $('.select__cont');
+    	var relX = e.pageX - $this.offset().left;
+    	gsap.to(target, 0.3, {
+    		x: (relX - $this.width()/2) / $this.width() * movement,
+    		ease: Power2.easeOut
+    	});
+    	}
+    }); 
+}
+/* # MAGNETIC BUTTON Заказать и + */
 
 (function() { 
 	let isSafari = (function() { 
