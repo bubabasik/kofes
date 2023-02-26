@@ -99,7 +99,7 @@
 	border-radius: 50%;
 	bottom: 0;
 	left: 50%;
-	transform: translate(-50%, 50%);
+	margin: 0 0 v(-40) v(-40);
 
 	&:before{
 		content: '';
@@ -128,7 +128,7 @@
 		transform: none;
 		width: v(120);
 		height: v(120);
-		margin-top: v(50);
+		margin: v(50) 0 0;
 
 	}
 	@include media($w-xl) {
@@ -144,6 +144,7 @@
 	align-items: center;
 	justify-content: center;
 	margin-top: v(32);
+	overflow: hidden;
 
 	@include media($w-md) {
 		flex: 0 0 45%;
@@ -161,7 +162,25 @@
 	}
 }
 .top__image{
+	display: inline-block;
+	vertical-align: top;
 	position: relative;
+	margin: v(-39) v(-19) 0 v(-23);
+
+	img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		&:first-child{
+			position: relative;
+			opacity: 1;
+		}
+	}
+
+	@include media($w-xl) {
+		margin: v(-102) v(-94) 0 v(-74);
+	}
 }
 .top__video{
 	video{

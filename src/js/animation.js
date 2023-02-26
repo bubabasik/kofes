@@ -166,7 +166,11 @@ $(function(){
 			const words = title.querySelectorAll(".words");
 			const lines = title.querySelectorAll(".line");
 			const link = section.querySelector('.top__link');
-			const image = section.querySelector('.top__image');
+
+			const image1 = section.querySelector('.top__image-1');
+			const image2 = section.querySelector('.top__image-2');
+			const image3 = section.querySelector('.top__image-3');
+			const image4 = section.querySelector('.top__image-4');
 
 			const mainTimeline = gsap.timeline();
 
@@ -185,6 +189,25 @@ $(function(){
 			});
 
 			mainTimeline.add(tl, 1.2);
+
+			tl = gsap.timeline()
+			.to(image2, {
+				opacity: 1,
+				duration: 1,
+				ease: 'ease-in'
+			})
+			.to(image3, {
+				opacity: 1,
+				duration: .8,
+				ease: 'ease-out'
+			})
+			.to(image4, {
+				opacity: 1,
+				duration: .5,
+				ease: Power3.easeOut
+			})
+
+			mainTimeline.add(tl, 1.6);
 
 			/*gsap.set(image, {opacity: .2});
 			tl = gsap.timeline()
@@ -243,27 +266,30 @@ $(function(){
 
 	/* img */
 	$(function(){    
-		const title = gsap.utils.toArray('.img-appear');
-		title.forEach((img, i) => {
-			gsap.set(img, {
-				webkitClipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-				clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-			})
+		if(windowWidth >= 1200) {
 
-			let tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: img,
-					start: "top bottom-=20%",
-					toggleActions: "play none none none"
-				}
-			})
-			.to(img, {
-				clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-				duration: 1,
-				ease: Power2.easeOut
+			const images = gsap.utils.toArray('.img-appear');
+			images.forEach((img, i) => {
+				gsap.set(img, {
+					webkitClipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+					clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+				})
+
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: img,
+						start: "top bottom-=20%",
+						toggleActions: "play none none none"
+					}
+				})
+				.to(img, {
+					clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+					duration: 1,
+					ease: Power2.easeOut
+				});
 			});
 
-		});
+		}
 	});
 
 
@@ -431,7 +457,6 @@ $(function(){
 	if($('.utp__cifres').length) {
 		$(function(){
 			let items;
-			console.log(windowWidth);
 			if(windowWidth >= 992) {
 				items = gsap.utils.toArray(".utp__cifres_item")
 			}else{
@@ -469,14 +494,16 @@ $(function(){
 	$(function(runText){ 
 		if($('.text-to-left-side').length) {
 			$(window).on("load resize scroll", function() {
-				$(".text-to-left-side").each(function() {
-					var windowTop = $(window).scrollTop();
-					var elementTop = $(this).offset().top;
-					var leftPosition = windowTop * 1600 / elementTop;
-					$(this)
-					.find(".marquee__inner")
-					.css({ right: leftPosition });
-				});  
+				if(windowWidth >= 1200) {
+					$(".text-to-left-side").each(function() {
+						var windowTop = $(window).scrollTop();
+						var elementTop = $(this).offset().top;
+						var leftPosition = windowTop * 1600 / elementTop;
+						$(this)
+						.find(".marquee__inner")
+						.css({ right: leftPosition });
+					});  
+				}
 			}); 
 		}
 	}); 
@@ -515,22 +542,28 @@ $(function(){
 			})
 			mainTimeline.add(tl)
 
-			items.forEach((item, index) => {
-
-				let num = item.querySelector(".who__num")
-				let text = item.querySelector(".who__text")
-
-				let tl = gsap.timeline()
-				.to(item, {
-					clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-					duration: 1,
-					ease: Power2.easeOut
+			if(windowWidth >= 1200) {
+				gsap.set(items, {
+					webkitClipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
+					clipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
 				})
-				.from(num, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.8')
-				.from(text, {opacity: 0, duration: .5, ease: Power2.easeIn}, '<')
+				items.forEach((item, index) => {
 
-				mainTimeline.add(tl, index * 0.3)
-			})
+					let num = item.querySelector(".who__num")
+					let text = item.querySelector(".who__text")
+
+					let tl = gsap.timeline()
+					.to(item, {
+						clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+						duration: 1,
+						ease: Power2.easeOut
+					})
+					.from(num, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.8')
+					.from(text, {opacity: 0, duration: .5, ease: Power2.easeIn}, '<')
+
+					mainTimeline.add(tl, index * 0.3)
+				})
+			}
 
 			ScrollTrigger.create({  
 				trigger: ".who__cont",
@@ -662,41 +695,43 @@ $(function(){
 
 			mainTimeline.add(tl)
 
-			conts.forEach((cont, index) => {
+			if(windowWidth >= 1200) {
+				conts.forEach((cont, index) => {
 
-				let tl = gsap.timeline();
+					let tl = gsap.timeline();
 
-				let item = cont.querySelector('.ucard__item');
-				let text = cont.querySelector('.ucard__text');
-				let img = cont.querySelector('.ucard__img');
+					let item = cont.querySelector('.ucard__item');
+					let text = cont.querySelector('.ucard__text');
+					let img = cont.querySelector('.ucard__img');
 
-				gsap.set(item, {
-					webkitClipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
-					clipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
+					gsap.set(item, {
+						webkitClipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
+						clipPath: "polygon(-100% -100%, 200% -100%, 200% -100%, -100% -100%)",
+					})
+
+					tl
+					.to(item, {
+						webkitClipPath: "polygon(-100% -100%, 200% -100%, 200% 200%, -100% 200%)",
+						clipPath: "polygon(-100% -100%, 200% -100%, 200% 200%, -100% 200%)",
+						duration: 2,
+						ease: Power2.easeOut
+					})
+					.from(text, {
+						opacity : 0,
+						duration : .5,
+						ease: Power1.easeIn
+					}, '-=1.5')
+					.from(img, {
+						y: 30,
+						duration : 1,
+						ease: Power1.easeIn
+					}, '-=2');
+
+
+					mainTimeline.add(tl, index * .2)
+
 				})
-
-				tl
-				.to(item, {
-					webkitClipPath: "polygon(-100% -100%, 200% -100%, 200% 200%, -100% 200%)",
-					clipPath: "polygon(-100% -100%, 200% -100%, 200% 200%, -100% 200%)",
-					duration: 2,
-					ease: Power2.easeOut
-				})
-				.from(text, {
-					opacity : 0,
-					duration : .5,
-					ease: Power1.easeIn
-				}, '-=1.5')
-				.from(img, {
-					y: 30,
-					duration : 1,
-					ease: Power1.easeIn
-				}, '-=2');
-
-
-				mainTimeline.add(tl, index * .2)
-
-			})
+			}
 
 
 			ScrollTrigger.create({  
@@ -749,7 +784,7 @@ $(function(){
 					mainTimeline.add(tl, 0)
 				}
 
-				if(cards) {
+				if(cards && windowWidth >= 1200) {
 					cards.forEach((item, index) => {
 						let tl = gsap.timeline()
 						let img = item.querySelector('.card__item_img')
@@ -832,7 +867,7 @@ $(function(){
 			}
 
 
-			if(news) {
+			if(news && windowWidth >= 1200) {
 				news.forEach((item, index) => {
 					let tl = gsap.timeline()
 					let img = item.querySelector('.news__img')
@@ -931,7 +966,7 @@ $(function(){
 					mainTimeline.add(tl, filter_pause)
 				}
 
-				if(products) {
+				if(products && windowWidth >= 1200) {
 					products.forEach((product, prod_index) => {
 						let tl = gsap.timeline()
 						let img = product.querySelector('.pr__img')
@@ -1014,24 +1049,26 @@ $(function(){
 			const items = gsap.utils.toArray(".modcat__item:not(.modcat__item-title)")
 			const mainTimeline = gsap.timeline();
 
-			gsap.set(items, {clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"});
+			if(windowWidth >= 1200) {
+				gsap.set(items, {clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)"});
 
-			items.forEach((item, index) => {
+				items.forEach((item, index) => {
 
-				let name = item.querySelectorAll(".modcat__item_name")
-				let img = item.querySelectorAll(".modcat__item_img")
+					let name = item.querySelectorAll(".modcat__item_name")
+					let img = item.querySelectorAll(".modcat__item_img")
 
-				let tl = gsap.timeline()
-				.to(item, {
-					clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-					duration: 1,
-					ease: Power2.easeOut
+					let tl = gsap.timeline()
+					.to(item, {
+						clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+						duration: 1,
+						ease: Power2.easeOut
+					})
+					.from(name, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.8')
+					.from(img, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.5')
+
+					mainTimeline.add(tl, index * 0.3)
 				})
-				.from(name, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.8')
-				.from(img, {opacity: 0, duration: .5, ease: Power2.easeIn}, '-=.5')
-
-				mainTimeline.add(tl, index * 0.3)
-			})
+			}
 
 			ScrollTrigger.create({  
 				trigger: section,
@@ -1425,25 +1462,25 @@ if($('.amim-magnetic').length) {
 
 /* MAGNETIC BUTTON Заказать и + */
 if($('.select__cont').length) {
-    $(function() {
-    	$('.select__cont').mouseleave(function(e){
-    		gsap.to('.select__plus', 0.3,{ x: 0});
-    	});
-    	$('.select__cont').mousemove(function(e){   
-    		callParallax(e);
-    	});
-    	function callParallax(e){
-    		parallaxIt(e, '.select__plus', 70);
-    	}
-    	function parallaxIt(e, target, movement){
-    	var $this = $('.select__cont');
-    	var relX = e.pageX - $this.offset().left;
-    	gsap.to(target, 0.3, {
-    		x: (relX - $this.width()/2) / $this.width() * movement,
-    		ease: Power2.easeOut
-    	});
-    	}
-    }); 
+	$(function() {
+		$('.select__cont').mouseleave(function(e){
+			gsap.to('.select__plus', 0.3,{ x: 0});
+		});
+		$('.select__cont').mousemove(function(e){   
+			callParallax(e);
+		});
+		function callParallax(e){
+			parallaxIt(e, '.select__plus', 70);
+		}
+		function parallaxIt(e, target, movement){
+			var $this = $('.select__cont');
+			var relX = e.pageX - $this.offset().left;
+			gsap.to(target, 0.3, {
+				x: (relX - $this.width()/2) / $this.width() * movement,
+				ease: Power2.easeOut
+			});
+		}
+	}); 
 }
 /* # MAGNETIC BUTTON Заказать и + */
 

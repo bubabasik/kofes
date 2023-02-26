@@ -126,6 +126,7 @@
 
 .section_catdescr{
 	padding-bottom: v(120);
+
 	@include media($w-xl) {
 		padding-bottom: v(250);
 	}
@@ -137,6 +138,11 @@
 	padding-top: v(17);
 	position: relative;
 
+	@include media-max($w-md) {
+		h2{
+			font-size: v(28);
+		}
+	}
 	@include media($w-md) {
 		padding-top: v(40);
 	}

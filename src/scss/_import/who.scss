@@ -76,7 +76,7 @@
 
 	&.anim-active{
 		.who__item{
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			// clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 		}
 		.who__num,
 		.who__text{
@@ -108,7 +108,7 @@
 	padding: v(16) v(26) v(16) v(16);
 	min-height: v(120);
 
-	clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0);
+	// clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0);
 	transition: .8s var(--ease-out);
 	will-change: clip-path;
 
