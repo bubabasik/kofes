@@ -167,11 +167,6 @@ $(function(){
 			const lines = title.querySelectorAll(".line");
 			const link = section.querySelector('.top__link');
 
-			const image1 = section.querySelector('.top__image-1');
-			const image2 = section.querySelector('.top__image-2');
-			const image3 = section.querySelector('.top__image-3');
-			const image4 = section.querySelector('.top__image-4');
-
 			const mainTimeline = gsap.timeline();
 
 			let tl = gsap.timeline();
@@ -190,6 +185,11 @@ $(function(){
 
 			mainTimeline.add(tl, 1.2);
 
+			/*
+			const image1 = section.querySelector('.top__image-1');
+			const image2 = section.querySelector('.top__image-2');
+			const image3 = section.querySelector('.top__image-3');
+			const image4 = section.querySelector('.top__image-4');
 			tl = gsap.timeline()
 			.to(image2, {
 				opacity: 1,
@@ -208,28 +208,8 @@ $(function(){
 			})
 
 			mainTimeline.add(tl, 1.6);
-
-			/*gsap.set(image, {opacity: .2});
-			tl = gsap.timeline()
-			.to(image, {
-				opacity: .5,
-				duration: .8,
-				ease: Power2.easeIn
-			})
-			.to(image, {
-				opacity: .7,
-				duration: .6,
-				delay: .6, 
-				ease: Power2.easeIn
-			})
-			.to(image, {
-				opacity: 1,
-				duration: 0,
-				delay: 1, 
-				ease: Power2.easeOut
-			})
-
-			mainTimeline.add(tl, 1.5);*/
+			*/
+		
 
 
 			ScrollTrigger.create({  
