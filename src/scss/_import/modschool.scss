@@ -192,6 +192,9 @@
 		font-size: v(16);
 		font-weight: 500;
 		letter-spacing: -0.03em;
+		& > span{
+			white-space: nowrap;
+		}
 		sup{
 			opacity: 0.65;
 			font-size: v(12);

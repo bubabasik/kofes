@@ -70,7 +70,7 @@
 	ul{
 		list-style: none;
 		padding: 0;
-		margin: 0;
+		margin: 0 0 calc(var(--text-mb) * var(--fz));
 		&:not(.checklist) {
 			li{
 				position: relative;
@@ -94,7 +94,7 @@
 	ol{
 		list-style: none;
 		counter-reset: myCounter;
-		margin: 0;
+		margin: 0 0 calc(var(--text-mb) * var(--fz));
 		padding: 0;
 		li{
 			position: relative;

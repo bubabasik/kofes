@@ -10,11 +10,13 @@
 	padding: v(106) v(16) v(55);
 	margin-bottom: v(40);
 	display: flex;
+	background: #141414;
 
 	&_in{
 		display: flex;
 		flex-flow: column;
 		z-index: 5;
+		width: 100%;
 	}
 
 	@include media($w-md) {
@@ -41,6 +43,14 @@
 }
 .top__bg{
 	border-radius: v(5);
+}
+.top__video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 .top__info{
 	display: flex;
@@ -145,6 +155,7 @@
 	justify-content: center;
 	margin-top: v(32);
 	overflow: hidden;
+	opacity: 0;
 
 	@include media($w-md) {
 		flex: 0 0 45%;
@@ -166,6 +177,7 @@
 	vertical-align: top;
 	position: relative;
 	margin: v(-39) v(-19) 0 v(-23);
+	padding-bottom: 75%;
 
 	img{
 		position: absolute;

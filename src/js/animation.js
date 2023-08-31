@@ -26,6 +26,18 @@ function LineWrapper(node) {
 	});
 	node.innerHTML = finalHTML.trim();
 }
+
+var top_video =  document.querySelector('.top__video');
+if (top_video) {
+	var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
+	var src = windowWidth > 768 ? top_video.dataset.videoPc : top_video.dataset.videoMob;
+	var source = document.createElement('source');
+
+	source.src = src;
+	source.type = 'video/mp4';
+	top_video.appendChild(source);
+}
+
 $(function(){
 
 	let 
@@ -141,7 +153,7 @@ $(function(){
 			gsap.set(toTop, {opacity: 1});
 		}, 300)
 		const toTopAnim = gsap.from(toTop, {
-			yPercent: 200,
+			yPercent: 300,
 			paused: true,
 			ease: "easeOut",
 			duration: 0.3,
@@ -209,7 +221,7 @@ $(function(){
 
 			mainTimeline.add(tl, 1.6);
 			*/
-		
+
 
 
 			ScrollTrigger.create({  
@@ -501,7 +513,20 @@ $(function(){
 			})
 			.from($('.who__title > span:nth-child(2n+2)'), { xPercent: 20 }, '<') 
 			.from($('.who__title > span:nth-child(2n+1):not(:first-child)'), { xPercent: -20 }, '<') 
-			.fromTo(".who__from", { yPercent: 20 }, {yPercent: -20}, '<') 
+			.fromTo(".who__from", 
+			{ 
+				yPercent: 20,
+				x: 0,
+				y: 0,
+				z: 1
+			}, 
+			{
+				yPercent: -20,
+				x: 0,
+				y: 0,
+				z: 1
+			}, 
+			'<') 
 		})
 	}
 
@@ -1349,17 +1374,17 @@ function initMenuImage() {
 		});
 	}
 
-	$('.menu__cont a').on('mouseenter', function() {
+	$('.menu__cont a:not(.menu__item-all)').on('mouseenter', function() {
 		$('.menu-image').addClass('active');
 	});
-	$('.menu__cont a').on('mouseleave', function() {
+	$('.menu__cont a:not(.menu__item-all)').on('mouseleave', function() {
 		$('.menu-image').removeClass('active');
 	});
 
 
-	$('.menu__cont a').on('mouseenter', function() {
+	$('.menu__cont a:not(.menu__item-all)').on('mouseenter', function() {
 
-		var $elements = $(".menu__cont a");
+		var $elements = $(".menu__cont a:not(.menu__item-all)");
 		var index =  $elements.index($(this));
 		var count = $(".menu-image li").length;
 		gsap.to($(".menu-image-list"), {
@@ -1380,7 +1405,7 @@ function initMenuImage() {
 
 /* MAGNETIC BUTTON ГЛАВНАЯ - ПЕРВЫЙ ЭКРАН*/
 var windowWidth = $(window).width();
-if((windowWidth > 1200) & ($('a.top__cont.link').length)){
+if((windowWidth > 1200) & ($('a.top__cont.link').length) && false){
 	var mArea = document.querySelector('a.top__cont.link');
 	function parallaxIt(e, target, movement = 1){
 		var boundingRect = mArea.getBoundingClientRect();
